@@ -1,0 +1,89 @@
+Así que puede ser sorprendente
+que podamos usar sockets para escribir un programa de diez líneas que
+recupera una página web, pero, oye, esto es Python. Estamos tratando de hacer
+esto lo más fácil posible, no queremos repetirnos. DRY — no nos repitamos. Así que hay otra biblioteca que empaqueta
+todos esos sockets y lo hace por nosotros automáticamente, llamado urllib. Así que es un poco más larga para escribir. Vamos a importar algunas cosas,
+haremos una "urlllib.request.open" Así que importamos algunos, algunos fragmentos de la biblioteca
+y luego decimos, bien, urllib.request.urlopen. Eso es una cadena, no bytes, si recuerdas del último video. Aquí está una URL normal y sencilla.
+Va a analizar la URL. Va a averiguar con qué servidor hablar, qué documento recuperar, qué versión HTTP,
+la solicitud GET, todo eso. Está dentro porque
+resulta que es lo mismo cada vez que vas a hacer
+una solicitud web, ¿verdad? Así que por qué no escribir
+un código para hacerlo. Y así esto lo abre y nos devuelve
+un controlador de archivo. Es un controlador de archivos normal y
+sencillo que usas para abrir un archivo. Así que esta línea justo aquí es casi
+la misma que para abrir un archivo, ¿verdad? Nos devuelve un controlador. En realidad no lee los datos, pero nos da una especie de apertura
+que podamos ejecutar la lectura. Ahora algo muy común
+que podemos hacer ciertamente no es lo único
+que podemos hacer, es ejecutar un bucle for para
+las líneas de este controlador. Así que eso va a iterar a través de
+todas las líneas de esta URL. Así que eso va a abrir la URL,
+leer los datos, e iterar con un bucle for
+una vez para cada línea. Ahora, esta iteración de líneas es
+un arreglo de bytes, no una cadena. Así que tenemos que decodificar
+para obtener una cadena, así que esto nos lo
+convierte en una cadena. Y luego haremos algo como, ya sabes, rstrip o strip o rstrip o lo que
+sea que queramos hacer. Pero en este punto tenemos una
+cadena que son todas las líneas de esto. Y eso es muy simple, ¿verdad? Esto es lo que sería la salida. Va a abrir esta cosa. Notarás que no hay encabezados aquí
+y que solo te muestra los datos. Pero sabes que habían encabezados, luego resulta que la URL los abre se los come y los recuerda, y en realidad puedes pedirlos
+más tarde. Puedes decir, "oye, dame los encabezados" si quieres, pero la mayoría de las veces
+no te interesan los encabezados. Simplemente salta a los datos
+y pasa por el bucle for cuatro veces, e imprime las cuatro líneas
+que están en ese archivo. Eso es bastante impresionante porque es como cuatro líneas de código
+y estamos leyendo una página web en Python. Y eso es probablemente mucho mas simple
+que en cualquier otro lenguaje que conozca para obtener los datos de una página web
+y tratarla como un archivo. Así que creo que eso
+es realmente y verdaderamente sorprendentemente hermoso y simple,
+tomar todo este conocimiento de la Internet, esta arquitectura y
+el HTTP y todas esas cosas, y meterlo todo en una declaración de
+importación y 3 líneas de código. Entonces, trata esto como un archivo. Así que si empiezas a pensar en esto, que puedes pensar en lugar de
+hacer declaraciones abiertas, haces declaraciones urlopen, y luego escribes cualquier
+bucle que quieras escribir, y luego puedes manejar
+datos en la Internet. Esto ya no es una página web,
+aunque puedes pulsar en esa URL. Esto es como un archivo en la Internet. es un archivo de Internet, de alguna forma. Y entonces lo que hacemos
+es que abrimos esta cosa, y luego nosotros, ya sabes, hacemos un diccionario
+como lo hicimos antes. Y luego lo leemos,
+y luego obtenemos cada línea. Y lo único que tenemos que hacer un
+poco diferente porque esto viene de del espantoso mundo externo del UTF-8
+es que tenemos que decodificarlo. La línea es una cadena de bytes que se
+compara con una cadena de caracteres. Así que el decodificador dice, dime la cadena de bytes y conviértela
+en una cadena de caracteres Unicode. Pero entonces todos los
+métodos de cadena funcionan porque, nos da una cadena. Así que la dividimos,
+pero ahora todas son cadenas. Sólo haces la decodificación una vez. Es como el primer momento
+en que tocas esos datos y los sacas los decodificas y luego
+ya puedes trabajas con ellos, ya son una cadena
+a partir de ese punto. Y ahora tienes un arreglo de palabras
+y repites las palabras en el arreglo, y haces el conteo,
+y luego lo imprimes. Así que las únicas líneas que cambiaron fueron
+estas 2 y tuvimos una pequeña decodificación. Pero aparte de eso,
+esto es idéntico a abrir un archivo y leer todas las
+palabras de ese archivo y contarlas. Y de nuevo, es por eso que nos gusta usar
+Python para ir a buscar datos de la web. Ahora no tenemos que
+leer sólo archivos de texto, podemos leer archivos HTML. Solo dilo, dime ese archivo HTML, y luego escribes un bucle. Así que ahora básicamente hemos
+construido un navegador web en cuatro líneas de archivos y esto
+imprimirá el contenido de esa página web. Una vez más, recuerda, los encabezados
+están ahí, pero no salen en este bucle, tienes que pedirlos de una
+manera diferente. Y eso es todo. Y si queremos escribir otro bucle
+donde realmente leemos el material, y vamos a buscar href=" y luego sacamos esto, quizás con una expresión regular en una
+instrucción dividida o una operación de búsqueda, porque ya somos buenos con las cadenas. Somos buenos para destrozar las cosas. Si te doy una asignación para
+buscar páginas como esta y encontrar cosas que
+se ven como href=h, Yo digo, oh aquí está tu asignación
+buscar href=", y luego algunas cosas, y luego eso, y extraes esto. Y luego lo que haces es regresar
+y pedir ese enlace, ¿verdad? Así que aquí hay otro enlace.
+Solicita ese enlace. ¿OK? Así que podrías escribir un
+programa que tome una página web, busque todos los enlaces
+de esa página web, y luego abra todas esas
+páginas web y así sucesivamente. Y entonces has escrito Google. Has escrito un programa de Python.
+Estoy suponiendo, porque Python es un lenguaje muy
+popular en Google y no sé si es verdad, pero voy a suponer que el
+primer WebCrawler fue, ya sabes, unos pocos cientos
+de líneas más allá de esto. Y para el final de esta clase, si sigues adelante, realmente escribiremos
+un WebCrawler en Python usando una base de datos
+y un montón de otras cosas. Esa es una versión muy
+pequeña de lo que es que Google está haciendo
+cuando está tratando de hacer una copia completa de toda la
+Internet en sus propios servidores. Así que a continuación vamos
+a hablar de como puedes desarmar eficientemente el HTML
+y buscar varias cosas e imprimirlas. Porque resulta que HTML es tan feo y tan inconsistente que las expresiones regulares
+no siempre funcionan muy bien con el HTML. Así que a continuación hablaremos sobre
+algunas técnicas para analizar el HTML.

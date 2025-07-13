@@ -1,0 +1,100 @@
+En este video, vamos a hablar un poco sobre cómo usar la consola de
+desarrollo en tu navegador. En este curso, escribimos programas de
+Python para hablar con Internet, pero a veces quieres depurar
+cómo una página funciona en realidad. El programa Telnet está en
+menos y menos Sistemas Operativos, ya lo sacaron de la Macintosh, todavía está ahí en Linux. Así que, quiero decirte cómo usar
+esta consola de desarrollo para averiguar varias cosas
+sobre tu Ciclo de Solicitud/Respuesta. Echemos un vistazo a esta página. Entonces, este es nuestra page1.htm, y la hemos visto esto de
+muchas maneras diferentes, ya sea por medio de Telnet
+o un programa Python, y ahora voy a escribirla en un navegador, y luego vamos a descuartizarla
+y ver lo que está pasando. Así que, hice esto en Vista, Desarrollador, Consola,
+y bajo la pestaña de Red, y luego actualizo la página. Entonces, lo que esto está haciendo
+es mostrar cada una de las solicitudes, y el Ciclo de Solicitud/Respuesta. Así que, page1.htm es el documento. Recuerda que ya hablamos de eso. Está el protocolo, el servidor y el documento. Page1 es el documento. Así que, si hago clic en esto, puedo ver todo tipo de cosas. Entonces, la vista previa, este es
+el HTML tal como se renderiza. Pero lo más interesante es
+la solicitud GET, lo encabezados. Así que, recuerda, se hace una solicitud. En este caso, es un "Get", ¿verdad? Entonces obtiene una
+respuesta, que tiene un 200, y si miras todas las pequeñas cosas
+que vimos en las otras conferencias, verás que estos 200 están saliendo. Ves la dirección IP y a donde va a ir, y luego los encabezados de
+respuesta, el control del caché, y en realidad tengo una
+asignación donde se supone que debes leer algunas de
+estas cosas y escribirlas. Obtendrás exactamente estos mismos encabezados, ya sea en Python o con Telnet
+o con la consola de desarrollo. Así que, esa asignación,
+la puedes hacer como quieras. Así, como la ETag o el Content-Type, que dice que esta es una página HTML. Eso le dice, cuándo
+obtiene la respuesta real. La respuesta real es un montón
+de "mayores que" y "menores que", eso es el HTML, pero dice que
+hay que formatear esto con HTML. Entonces, los encabezados de la solicitud, Desearía que los pusieran
+en un orden diferente porque el navegador hace
+la conexión con el puerto 80, y luego envía la solicitud
+desde el puerto 80, entonces envía los encabezados
+de la solicitud desde el puerto 80, y luego espera la respuesta. ¿Verdad? Entonces, estas son las cosas. Te dice varias cosas
+como aceptar el lenguaje, por ejemplo, dice que
+prefiero el inglés. De hecho, puedes tener varios idiomas, y puedes establecer
+una prioridad para ellos, así que el inglés es mi idioma principal
+y el español es ser mi idioma secundario. El navegador está haciendo esto, envía esta información al
+servidor para cada solicitud. Así que, así es como algunas
+páginas web saben que deberían mostrarse en español
+si eres un hablante nativo del español. Así que, esa es la solicitud, y luego la respuesta es este HTML, y eso es literalmente lo el servidor
+devolvió y eso aparece de esta forma. Así que, la forma en que se representa es
+que este H1 se convierte en texto, etcétera. Eso es lo que es.
+Ves el Ciclo de Solicitud/Respuesta. Volveré para deshacerme de esto. Así que, voy a borrar esto
+y voy a presionar "Actualizar", y eso va a desencadenar
+otra solicitud Get y ahí la tienes. Vemos los Encabezados, Vista Previa, Respuesta, etc., y Tiempo. Así que esa es la idea básica. Quiero mostrarte un par de cosas
+más sobre este Ciclo de Solicitud/Respuesta. Puedes dejar de ver el
+video ahora si así lo quieres, pero quiero mostrarte
+algunas otras cosas que en realidad vienen
+de mi otra especialización, Aplicaciones Web para Todos. Este es un juego
+de adivinanzas que escribí, y se supone que debes adivinar un número, y si has tomado esta
+clase el tiempo suficientemente, sabes cuál es el número
+que será la respuesta correcta, porque siempre es la respuesta correcta. Así que, quiero mostrarte la
+idea de poner parámetros en tu URL. Puedo poner un parámetro, Guess=12. Entonces, pongo un signo de interrogación, y verás las URLs. Si estás usando Google Maps, o lo que sea,
+verás estos signos de interrogación. Estos son parámetros que
+se agregan después del URL. Por lo tanto, aquí tenemos la URL, y luego tenemos los
+parámetros que se envían a esta aplicación interactiva en el servidor. Así que, si echamos
+un vistazo a lo que pasó, hacemos una solicitud Get, y si miro los encabezados, envió esta URL completa, el documento a recuperar. ?Guess=1, las aplicaciones web
+después del signo de interrogación, estos como pares de valores clave para los parámetros. Es como un pequeño diccionario. Así que, si miramos aquí, eso es lo que era la URL, hicimos una solicitud Get para eso, esa era la dirección IP a la
+que nos conectamos, obtuvimos un 200, los encabezados de respuesta,
+su tipo de contenido, texto HTML. De nuevo, los encabezados de solicitud, estos son los que estamos enviando. Hay una ruta y el esquema
+y todas estas otras cosas, y luego están los parámetros
+de cadena de consulta. Así que, estos parámetros
+que están sentados ahí al final se llaman parámetros Get o
+parámetros de cadena de consulta, y puedes poner más de uno
+aunque a esta aplicación no le importa. Así que podría poner &X =14&, ABC=22, y luego todos esos pares de valores
+de claves W3 que se están enviando. Así que, si echamos
+un vistazo, esa es la URL que llega. Pero como se percibe dentro del servidor, ve que hay tres variables que
+han sido enviadas al final de esta URL, así que esa es otra cosa que vas a ver. De nuevo, no lo necesitas para esta clase, pero, de la misma forma que
+hablamos del Ciclo Solicitud/Respuesta, a veces hay otra información. Ahora quiero mostrarles un último ejemplo. Voy a mostrarte cómo
+el código de estado puede cambiar. Así que, en este caso,
+el 200 significa que pido un documento, el 200 dice "Aquí está tu documento". Pero el 200 no es el único. Probemos uno más. Hagamos este, veamos si funciona. Veamos lo que sucede aquí. Voy a ir a una URL mala, este podría ser
+uno que ya conoces. Bien. Vamos a ir a la primera. ¿Ves esto? 404. Lo hizo bien. Así que, si hago clic en esto, y quiero conseguir esta URL, Zap no está ahí y la respuesta
+que dio el servidor no es 200. 200 significa "estas bien,
+aquí está tu documento". 404 significa "no encontrado", 404 "no encontrado". Eso es otra clase de medio, al igual que 42 es el medio, así que eso es 404 "no encontrado". Entonces, eso está en la respuesta, eso es parte de los encabezados de respuesta. El estado es 404, y el otro estado debería ser 200. Entonces, esos son dos estados. 200 significa "bueno",
+404 significa "no encontrado". Ahora, quiero mostrarte un estado más. Entonces, lo que esto hace es, esta es una aplicación que hace algo
+que se conoce como una redirección. Si hago una petición de Get
+y luego el servidor dice, Ya sabes, estás en la página equivocada. Me gustaría llevarte a esta otra página". Me devuelve una respuesta. Es un 302, y dice, "Hola, redirígete a esta otra página". 302 significa "estás en
+el lugar equivocado", y luego te devuelve una
+URL para el lugar correcto. Así que, voy a decir 2 aquí, y veremos qué sucede. Voy a pedirle al servidor una página, y me va a devolver una página, y luego mi navegador
+va a tomar la siguiente página. Así que, voy a solicitarla. Entonces, solicité reader1.php, y te darás cuenta de que no
+recibo nada para esta en particular. Entonces, hay dos, aquí está
+la segunda, aquí está la primera. Si miro los encabezados, Hice una solicitud Post que es como una
+solicitud Get pero es una solicitud diferente. Envié el número 2, Escribo el número 2 ahí, y luego obtuve un 302. 302 significa "no te di un documento. Lo que en realidad te di es un encabezado de ubicación, que dice que estás en el lugar equivocado, este es el lugar correcto, reader2.php es el lugar correcto". Entonces, tu navegador recibe este 302, e inmediatamente va y hace una
+solicitud Get a la URL a la que fue redirigido, así que esta es la URL redirigida. Bien. Esa fue una solicitud Get y ahora en realidad ya tengo una respuesta real
+y las vistas previas, etc. Así que, eso te da la idea básica de
+cómo el Ciclo de Respuesta/Solicitud. Hago clic en la página dos, y luego hago un Get y está bien. Así que, eso te da una idea
+básica del Ciclo de Respuesta/Solicitud, y cómo puedes
+ver esos encabezados y ver la interacción entre
+tu navegador y el servidor, cómo funcionan las respuestas
+de estado, cómo el resultado. Déjame mostrarte
+solo una cosa más. Aquí tienes algunos archivos. Haré clic en cover3.jpg, Voy a limpiar esto primero,
+así se ve poco más bonito. Cover3.jpg, mira esto. Esa es la portada del libro de texto. Ahora, si miro esto, Puedo ver algunas cosas. Hago una solicitud Get para eso. JPG es una imagen. Tengo una solicitud Get. Recibo un 200, lo que significa
+que solicité algo y me lo dieron, y todo lo demás es lo mismo, pero lo que es diferente
+aquí es el tipo de contenido, imagen/jpeg. Eso significa que la respuesta, no podemos verlo,
+es un montón de pequeños números. Los números mismos son esa imagen. Pero sabemos que el navegador
+sabe que es una imagen porque este encabezado de
+Content-Type le ha dicho que es una imagen. Así que, esa es una de las
+cosas que hacen estos encabezados. Si recuerdas, los encabezados salen primero, y los datos salen en segundo lugar. Así que, puedo ver el encabezado, decir, "Se supone que debo
+esto interpretar de cierta manera". Puedo mostrarte una más, romeo.txt. Bien. Así que, si miro esto, romeo.txt es otro documento. Tengo un 200, es un texto. Pero verás que esto es un text/plain. El otro dijimos que era text/html. Entonces, los metadatos de esos
+encabezados le dicen al navegador cómo interpretar el cuerpo del documento
+de respuesta cuando es devuelto. Bien. Entonces, con eso, te dejo ir. Esto es algo muy útil ya sea que seas un desarrollador de aplicaciones web
+o si estás jugando con APIs, poder entrar en esta consola y encontrar tu camino y
+descubrir lo que está pasando. Sólo porque sólo haya uno aquí abajo
+no significa que no haya muchos. Podría haber como 40 o 50, viste me desplacé hacia arriba y hacia abajo
+para encontrar ese 404 - Not Found. Espero que hayas encontrado esto útil.

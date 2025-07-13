@@ -1,0 +1,102 @@
+Ahora vamos a hablar de un
+nuevo formato de serialización. Hemos hablado de XML,
+que es un poco complejo. Y hay algo más simple que es JSON
+y es cada vez más popular hasta el punto donde es totalmente posible que en toda
+tu carrera no te encuentres con el XML. XML no es necesariamente malo, es simplemente muy poderoso y mucho más
+de lo que necesitamos en situaciones simples. Y aquí está uno de
+los videos que te mostraré. Es un video de mi amigo Douglas Crockford
+y se le atribuye descubrir JSON. JSON realmente no es un nuevo formato. JSON fue inventado por la sintaxis constante, la notación literal para las
+constantes en JavaScript para arreglos de constantes variables,
+valores y objetos. Y eso es lo que es.
+Y él explica muy claro que acabamos de notar que esto podría
+ser una forma de serializar datos. Así que cuando hablé de serialización, Hablé sobre cómo no vamos
+a usar la sintaxis de Python, no vamos a usar la sintaxis de Java, vamos a usar XML en el medio. Pero lo que sucede en JSON es que
+no vamos a usar la sintaxis de Python, no vamos a usar la sintaxis Java, pero vamos a usar la
+sintaxis JavaScript en el medio. Así que JSON es muy
+nativo a JavaScript. Y lo más interesante es que muchas cosas
+se construyen en navegadores de hoy en día, JavaScript se está convirtiendo en
+un lenguaje cada vez más interesante. Por lo tanto, la popularidad de JSON
+no se basa tanto en JavaScript, pero ciertamente no duele
+que JavaScript sea cada vez más más popular y que
+JSON venga con él. Así que Douglas Crockford
+es un tipo interesante. Tiene una especie de
+sentido de humor seco y te animo a que veas la entrevista
+que hice con Douglas Crockford. Como parte del sentido seco del humor, puedes ver dos libros
+aquí escritos por O'Reilly. Una es la Guía
+Definitiva de JavaScript y luego hay otro libro
+que es casi una broma, Es un libro muy bueno llamado
+JavaScript: The Good Parts. El grosor del JavaScript que está
+ahí no son las buenas partes, como diría Crockford, y este
+es un libro de Crockford. Así que esto es parte del
+humor seco de Crockford acerca de lo que piensa sobre JavaScript. Ahora Crockford diría,
+y yo estaría de acuerdo, que las partes buenas de JavaScript lo hacen
+un lenguaje de programación muy bueno, solo tienes que tener cuidado
+de no hacer las cosas que considera que son "las partes
+no tan buenas" de JavaScript. Así que Crockford básicamente estableció
+JSON como un estándar de fogata, no le pidió permiso a nadie
+y registró json.org y poner un par de documentos que
+dijeran que esto es lo que es JSON. Y ha tomado el mundo por tormenta. Los últimos años, como digo, debido a tantos datos se está moviendo
+entre los navegadores y los back ends y JSON es prácticamente el único formato
+de serialización que se está usando allí. El XML se sigue utilizando
+en algunas situaciones. Y así, aquí está el tipo similar de problema que resolvimos excepto
+que vamos a usar JSON ahora. Y así como en todo Python,
+importamos algo. Importamos la biblioteca JSON. Vamos a usar de nuevo
+la cadena de comillas triples. Y de nuevo, no vamos a extraer estos datos. Normalmente, sacaríamos estos
+datos de la Internet con urllib, o abrirlo en un archivo, o lo que sea. Y comienza con un {. Veremos otra sintaxis
+donde comienza con un corchete. El { es como un diccionario, ¿verdad? Y es como un diccionario. En JavaScript, se llama un objeto, pero es muy parecido un diccionario de
+Python en que tenemos pares clave-valor, hay una serie de claves, una llave seguida de dos puntos; las claves son cadenas, los valores son
+puede ser cualquier cosa, no sólo una cadena - teléfono. Y ahora aquí, tenemos un diccionario
+dentro de un diccionario. Esta es la palabra clave "phone" en el exterior, email y name están en la externa. Y luego hay un diccionario hijo aquí que va de aquí a aquí y tiene dos cosas, uno es el tipo y la otra es el número. Y luego este tiene hijo
+que tiene un "hide" de sí. Y podrías pensar que
+esto es un árbol también, si realmente quisieras hacerlo. Podríamos tener esta
+cosa externa que tiene un nombre, un teléfono. y un correo electrónico. Y debajo de teléfono,
+tenemos el tipo y el número. Lo siento, tengo que hacer estos largos. Y luego tenemos "hide". ¿Verdad? Una de las cosas que es diferente entre JSON es que no hay una etiqueta inicial, no hay
+una etiqueta final y no hay atributos. Así que estoy haciendo trampa al usar
+este atributo y moverlo hacia abajo. Y no hay área de texto. Así que tiene algunas cosas diferentes
+que son de naturaleza diferente a XML. Pero tiene algunas cosas que nos encantan. Y eso es que tenemos esta
+mancha de texto que que obtuvimos de algún lugar
+y vamos a pasarla. Este "loads" representa
+"cargado desde una cadena". Así que usa el método de
+biblioteca JSON o función loads de la biblioteca JSON y eso hace todo
+el análisis y mira todas estas cosas. Esto podría explotar,
+si hay un error de sintaxis, como si olvidas unas comillas
+o algo así, te da un rastreo aquí. O no, suponiendo que todo funcione bien. Y en este ejemplo en particular,
+va a funcionar bien. Y nos devuelve un objeto que representa, internamente, todos estos datos. Lo interesante es que lo que nos devuelve
+es en realidad un diccionario de Python. Así que esto termina siendo un tipo de diccionario Python como si
+se hubiera construido este diccionario Python, con nombre, teléfono y email como palabras clave
+y luego los valores son Chuck. Y luego otro diccionario y
+otro diccionario. OK. Así que info es un diccionario. Así que cuando hablamos con este diccionario, sólo usamos la sintaxis
+de paréntesis, sub name. Si lo imprimimos eso y
+hacemos "info sub name", nos da esto. Así que no tenemos que extraer el texto, hacer un GET, encontrarlo, Hay un diccionario
+y tiene una clave llamada "name". Y eso es lo que obtienes de vuelta. Si vamos a encontrar este "hide", y vamos a obtener info sub email, que es un diccionario, que entonces
+nos devuelve esta cosa de aquí, que también es un diccionario. Y entonces decimos "sub hide"
+dentro de ese y eso extrae el "sí" para imprimirlo. Así que esta es una de las cosas
+que funcionan muy bien con JSON, y es porque su estructura
+es más parecida a los tipos de estructuras
+que tenemos de listas y diccionarios. Y cada lenguaje de programación
+tiene algo que es más o menos equivalente a una lista y más o
+menos equivalente a un diccionario. Y lo que pasa es que este JSON no es
+una representación tan rica como el XML, pero porque es simple
+y se mapea directamente en las estructuras internas que tenemos
+en todos estos lenguajes, es mucho más fácil de usar. Y no es tan rico, pero su simplicidad, lo hace mucho más fácil de usar. Así que si comparas esto con el ejemplo XML anterior con los GETs
+y los .text y similares, qué estoy haciendo aquí, esto es mucho más directo. Lo miras, escribes estas cosas
+y terminas con ellas. Aquí hay un ejemplo de una lista. Así que tenemos listas y diccionarios
+y pueden ser anidadas como quieras. Así que lo que tenemos aquí
+es que nuestro JSON comienza aquí y termina aquí, y cómo
+es un corchete, es una lista. Y eso es una lista. En este caso, son dos items. Y esto es un diccionario. Y esto es un diccionario. Así que terminamos con
+un diccionario y un diccionario. Terminamos con una lista de dos diccionarios. Así que cuando tomamos
+esto y lo pasamos por "loads", suponiendo que no hay errores de sintaxis, obtenemos que info es una lista. No es un objeto, es una lista. Y podemos decir que,
+porque es una lista, podemos preguntar cuántos hay
+y nos dirá que hay dos cosas ahí. Y luego podemos escribir un bucle "for",
+podemos escribir un bucle "for" que tiene las cosas aquí y las cosas allí. va a iterar a través de esas dos cosas, que va a iterar a través de aquí
+y luego va a iterar a través de eso. Esto va a ser un diccionario
+y esto va a ser un diccionario. Así que este bucle va a correr dos veces,
+el bucle va a correr dos veces, una vez con esto como item, que es un diccionario, y la próxima vez
+con eso como item, y será un diccionario. Y luego dentro del bucle, el item apunta
+a esto y decimos item sub name. bueno, el item sub name es solo este Chuck. Y entonces el item sub id es 0.01. Y el item sub x es el 2. Y de nuevo, si miras hacia atrás al XML, Hace la misma cosa. Verás que solo es mucho más complejo. ¿Correcto? Mucho más complejo. JSON es más simple, por lo que el código
+que escribimos para trabajar con JSON es más simple y por eso
+a mucha gente le gusta. Mucha gente diría, ya sabes, lo que deberías hacer
+es si puedes usar JSON, probablemente deberías usar JSON, pero si tienes algo más complejo, puede que quieras usar XML. Pero en estos días, hay una especie de
+un fuerte movimiento hacia JSON. Y eso nos da un resumen
+de cómo funciona JSON. Y ahora, vamos a hablar un poco más y hablar sobre
+el Enfoque Orientado al Servicio.

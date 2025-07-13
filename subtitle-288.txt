@@ -1,0 +1,68 @@
+[MÚSICA] Hola a todos y bienvenidos
+a trabajar con código de muestra. Si estás interesado en el código
+fuente vas a Materiales, y descargas el Sample_Code.ZIP. Yo ya lo descargué y lo tengo en una
+carpeta llamada Code3 en mi computadora aquí es donde estoy,
+estoy en mi carpeta Code3. Y esto tiene un montón
+de fragmentos de código aquí. Así que si hago un LS, verás que
+tengo todos estos archivos aquí, y así que solo los dejaremos ahí. Y este es con el que quiero
+trabajar ahora mismo, este es el código socket1.py. Y, básicamente, lo que estamos haciendo aquí es
+simular lo que va a pasar en un navegador web. Y lo mejor del protocolo HTTP
+es que podemos hacerlo a mano. Y de hecho voy a
+hackear este protocolo HTTP. Esto va a ir a data.pr4e.org y
+va a recuperar un documento. Y por eso voy a hacer telnet. Ahora puedes hacer
+esto en una Mac y en Linux. Y si colocas telnet en un cuadro de
+Windows, puedes hacerlo aquí, data.pr4e.org. Y quiero hablar con el puerto 80, y
+el puerto 80 es un puerto diferente. Es un puerto no estándar, pero lo que estamos
+haciendo aquí es hablar con el puerto HTTP. Así que voy a ser capaz de enviar comandos a mano al servidor
+web y recuperar un documento. Así que ya he copiado esta cadena, esto obtiene HTTP romeo.txt. Estoy copiando eso en mi buffer porque
+si espero mucho tiempo, esto no funcionará. Así que aquí voy y
+voy a escribir eso Y tengo que presionar Enter dos veces, y
+eso literalmente era el protocolo HTTP. Lo que escribí allí
+fue el protocolo HTTP, y el servidor web responde con
+algunos metadatos sobre el documento. Cuantos datos hay,
+el tipo de datos que contiene. Una línea en blanco separa la información
+del encabezado del cuerpo del documento. Si fuera a ver a esto en un
+navegador, justo ahí, lo verías. Y si activo la consola
+del desarrollador, y Yo fui a la red, vamos a hacer
+esto un poco más grande. Verías eso. Recupera el archivo romeo.txt,
+nos lo devuelve y nos dice que muestra los encabezados
+y nos muestra las respuestas. Ya que esta es la misma
+forma de hacer lo mismo, y así es como se hace el protocolo HTTP, ¿OK? Pero ahora, vamos a
+hacer esto en Python y así que aquí está el
+código que vamos a escribir. Vamos a importar la biblioteca de sockets
+y vamos a hacer un socket. Ahora, esto no hace una conexión,
+piensa en un socket como un controlador de archivos que no aun
+tiene ningún dato asociado. Y luego lo que vamos a hacer es
+llegar y conectar ese socket a un destino en Internet con el
+nombre de dominio de data.pr4e.org. Y el segundo parámetro en esta tupla, esta es una llamada de función
+con solo una tupla como parámetro. La tupla sub cero es data.pr4e.org
+y la tupla sub uno es el 80, que dice que quiero hablar con el puerto 80. Eso podría fallar. Hará la conexión. Y si el puerto 80 está ahí, se va. Y luego iremos a
+enviar los comandos HTTP. Así que Get, estas son las reglas HTTP, seguidas por un
+final de línea, seguido por una línea en blanco. Así que me viste hacer esto allí,
+esto fue lo que escribí aquí y entonces tuve que
+escribir una línea en blanco. Ahora, si quieres leer los RFC sobre
+cómo hacer esto, puedes hacerlo tu mismo. Así que lo único un poco raro aquí es
+que tenemos que agregar este .encode. Y eso es porque hay cadenas dentro
+de Python que están en unicode, y tenemos que enviarlas
+en algo que se llama UTF-8. Y el codificador nos convierte
+internamente de unicode a UTF-8. Así que, como dije, este comando de
+UTF-8 bytes que luego vamos a enviar. Todavía tiene el mismo conjunto de
+caracteres en él y ahora vamos a enviarlo. Y después de que hayamos hecho la conexión,
+vamos a enviar estas dos cosas y entonces vamos a esperar. Y mi socket es como un controlador de
+archivos en este punto porque lo abrimos y hemos enviado datos. El protocolo HTTP nos dijo
+lo que teníamos que enviar y de hecho fue lo que tuvimos que enviar. Así que ahora tengo
+un simple bucle while. Y voy a pedir hasta 512 caracteres y recibir hasta 512
+caracteres y recuperar eso. Si sé que este es el final del
+archivo y no obtuve ningún dato. La longitud de los datos, la matriz de
+bytes que obtuve es menor que 1, entonces voy salirme de aquí. De lo contrario, voy a imprimir los datos y Voy a usar este decodificador que es
+como lo opuesto a este codificador. Lo que obtengo es datos
+codificados en UTF-8, lo más probable. Y el decodificador básicamente
+los convierte al formato interno Unicode que corre adentro. Esto va a correr un montón de veces,
+básicamente extrayendo los bloques hasta 512 caracteres a la vez, lo imprime y
+entonces cuando haya terminado entonces cerraremos esa conexión. No es muy emocionante,
+python3 socket1.py. Y verás que Python ahora va a
+hacer lo mismo que hice a mano. Ahora, por supuesto, lo interesante es
+que todo esto está en cadenas, ¿verdad? De esta manera podemos escribir
+código que haga algo con esto, pero todo lo que realmente estamos haciendo en
+esta situación en particular es mostrar cómo abres un socket, envías un comando
+y luego recuperas los datos. [MÚSICA]

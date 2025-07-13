@@ -1,0 +1,112 @@
+Bienvenido al capitulo 12. Ahora, lo que haremos
+sera escribir programas. En lugar de solo hablarle
+a una unidad de disco, vamos a ir fuera de la computadora
+y hablar a lo largo de la Internet, hablaremos en la web. La Internet, por supuesto, es algo
+emocionante que comprende muchas cosas, y hablaremos un poco sobre
+la arquitectura de Internet lo suficiente para motivar lo que vamos
+a hacer en los programas Python. Pero si realmente te emocionas
+con esto y lo encuentras interesante, Escribí un libro entero,
+es un libro gratuito, también puedes comprarlo en
+Amazon si lo deseas, pero solo ve allí. En realidad hay
+conferencias y pruebas cortas, y todo en este libro gratis sobre arquitectura de red que escribí
+llamado Introducción a la Redes. Este es un breve resumen de algo que
+analicé con mucho más detalle en ese libro. Una de las cosas de las
+que hablamos en ese libro es esta cosa llamada
+la Arquitectura de Red. Hay esta arquitectura en capas
+que básicamente representa una conexión sobre la Internet
+y representa dos computadoras, dónde una aplicación habla
+con una capa de transporte, que habla con una capa de Internet, que habla con la capa de enlaces y que
+habla con la conexión Wi-Fi o Ethernet. Y pasa por un montón de
+saltos en la red, tal vez 10 o 12, 15, y llega al final del destino que podría ser, tal vez, un
+servidor web o algo así. Sube a través de estas
+capas y luego ejecuta una aplicación web y luego
+los datos se envían de vuelta, por el mismo camino
+de vuelta 15 saltos, y luego de vuelta a tu
+aplicación y de ahí a tu pantalla. Para que puedas ver algo. Podemos hablar mucho
+de esto en el libro, y luego en mi otra clase de Coursera, Hablo mucho de estas capas
+y te doy todas estas cosas, pero vamos a simplificar
+y pasar por alto todas esas cosas. Es divertido, pero no vamos a tomar
+demasiado tiempo en ello, en su lugar, vamos a empezar en la primera
+capa que es una capa de extremo a extremo en la arquitectura
+de red y se llama Capa de Transporte. La idea es que si escribes
+un fragmento de código, escribirás un programa en Python
+que esta Capa de Transporte usará para hablar con una
+aplicación en otro servidor. Esta es la red aquí. Otro servidor y recuperar los datos y eso es
+lo que vamos a mostrarte cómo hacer. Entonces, la capa de Internet y la capa de
+enlaces implementan la capa de transporte. Pero por ahora, vamos a fingir que
+hay una buena tubería de punta a punta que cuando tu programa
+dice algo a través de la tubería el programa en el
+otro extremo la escucha, y cuando ese programa
+envía algo de vuelta, puedes también
+escucharlo por tu parte. Es una cosa muy simple. Por lo tanto, les
+llamamos comunicaciones entre dos aplicaciones porque
+realmente son dos aplicaciones, tu programa Python en un extremo
+y un servidor de red. Podría estar escrito en PHP, o Java, o incluso Python, pero cuando
+enganchas estas dos cosas juntas, hay dos piezas de software
+que se ejecutan en dos computadores independientes
+que están realmente chateando, es como si hicieran
+una llamada telefónica. Haces una llamada,
+hablas en la llamada y cuelgas. La diferencia es que las computadoras
+hacen esto cientos de veces por segundo, si no miles de veces por segundo, y esta conexión se
+conoce como un socket. Es una como pequeña cosa
+que está incorporada en la Internet el tiempo suficiente para
+tener esta conversación y luego se deshecha. Entonces, esto se
+conoce como un socket. La forma en que
+los sockets funcionan es, si quieres establecer
+un socket dices, "Me gustaría hablar con
+este servidor web en particular". Todos los servidores
+web tienen nombres, y números, y puntos. Y entonces también
+tenemos la aplicación. Las diferentes aplicaciones contenidas
+en ese servidor están escuchando en puertos. Podrías considerarlas casi como
+extensiones de números telefónicos. Por ejemplo, llamas a una gran compañía
+que tiene un número de teléfono y te dice, "Ingrese la extensión si la conoce." Eso significa que llamaste a la compañía
+pero solo quieres hablar con una persona. Así que estos puertos,
+estos puertos TCPIP. Estos pequeños puertos,
+son aplicaciones diferentes que se asocian a estos
+puertos cuando se inician. Entonces, el servidor de email
+entrante podría estar en el puerto 25 y se despierta y se sienta
+allí esperando que algo suceda. Entonces, nuestras aplicaciones dicen. ¿Sabes qué? Quiero enviar un correo, y voy a conectar a este servidor
+pero en el puerto 25 y ahí espero hablar con el
+servidor de correos electrónicos. Entonces, usamos estos puertos. Ahora, el puerto con el que vamos a
+jugar en esta clase es el puerto 80. El puerto 80 es el puerto web porque ese
+es el puerto que está conectado al servidor. El puerto 443 es el puerto HTTPS seguro. Así que, cuando te
+conectas a un servidor web. Así que, si eres un navegador y
+quieres conectarte a un servidor web, vas a un nombre o número de host
+y luego te conectas a puerto 80 y luego, con suerte,
+si hay un servidor web en ese host, estarás hablando con el
+servidor web en el puerto 80. De nuevo, es como si una aplicación
+de tu computadora hace una llamada telefónica, una aplicación en esta otra computadora
+contesta esa llamada telefónica, y ambas dicen "Hola". De los puertos TCP comunes, como dije, vamos a jugar más con el
+puerto 80, este es el puerto HTTP. Por lo tanto, a veces incluso
+irás a la web y navegarás y verás una URL que es un poco diferente
+que tiene algo como :8080. Bueno, esta es básicamente la sintaxis
+para los URLs del host y el :8080 es el puerto. Este es básicamente un servidor web
+que no se ejecuta en el puerto 80, pero que corre en el puerto 8080. Por lo tanto, no es como que
+tienen que estar en estos puertos, pero usualmente esperamos
+que estén en estos puertos. Normalmente habrá un
+servidor web en el puerto 80. Si hay un servidor web, puede que no haya un
+servidor web en el puerto 80. Entonces, Python es increíble. Digamos que quieres
+usar millones de líneas de código entre las capas de enlaces,
+red y transporte de tu computadora, así, como, en toda la Internet, y algún servidor en el otro lado, y los datos y
+¿quieres hablar con ellos? Se necesitan tres líneas de Python. Tres líneas de Python, eso es todo. Toda esa complejidad. Todo eso - tres líneas de Python. Así que, como siempre,
+primero tenemos que importar algo. Así que vamos a importar
+la biblioteca de sockets para decir, "Hey, vamos a usar esta biblioteca." Como en la expresión regular,
+decimos Import re y luego creamos un socket. Decimos socket.socket. Esta sintaxis de aquí, no quiero explicarla. Sólo escribe esto tal como te digo. Esto crea este punto
+final que está dentro tu computadora y que está listo
+para conectarse al otro extremo, pero aún no está conectado. Es como un punto de conexión que todavía no se ha conectado y
+eso es lo que significa esta magia. Vamos a enganchar algo a través
+de la Internet y vamos a usar un flujo. Un flujo es una serie de
+caracteres que siguen regresando. Esa es la segunda línea. La conexión real ocurre
+cuando decimos mysock.connect. Así que, esto nos devuelve
+un objeto y luego nosotros realmente llamamos al método de
+conexión en ese objeto y pasamos dos cosas. Pasamos al anfitrión con el
+que queremos conectarnos, y eso es un nombre de dominio, y un puerto al que queremos conectarnos. Eso hace la conexión y eso es todo lo que
+se necesita para una conexión de socket. Ahora, esto no es enviar ningún dato, es solo como marcar el teléfono. Eso es todo para hacer la conexión, para
+marcar el teléfono en Python, tal como dije. Increíblemente, sólo tres líneas. Esa es una de las cosas
+que amamos de Python. Nos encantó que Python haga tanto para nosotros con una
+declaración de importación sencilla. En esta tira cómica de XKCD, vemos a alguien que
+importó la anti-gravedad y empezó a flotar. Así que, eso te da la idea de que
+el socket de importación es algo increíble. Puedes hacer algo en dos líneas
+después de eso y estás haciendo algo útil. Así que, lo siguiente que vamos a discutir
+es una vez que tengamos los sockets, cómo usamos Python para
+comunicarnos con esa aplicación remota.

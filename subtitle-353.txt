@@ -1,0 +1,91 @@
+Hola, bienvenido al Capítulo 2. En este vamos a entrar un poco más
+en profundidad en los átomos, las pepitas, las pequeñas piezas que componen Python. Y luego vamos a trabajar en nuestro primer programa real que tiene una especie de principio, medio y final. Veamos. Una gran parte de un lenguaje de
+programación es la sintaxis de las constantes. Lo bueno de esto es que es algo instintivo. Así como un 123 o 98.6, numera tanto
+a enteros como a números de punto flotante. Hemos estado usando esto en calculadoras. Tienen mucho sentido para nosotros. El tipo de constantes que son
+un poco diferentes, son cosas como cadenas constantes. Entonces "Hola mundo" es una constante de cadena. Lo usamos para que nuestro programa pueda decir cosas
+buenas a las personas que lo utilizan. Entonces, las llamamos constantes porque no cambian, pero es algo obvio, constantes. Son solo una parte del lenguaje,
+así que eso es una constante. ¿Qué más? Variables y palabras reservadas. Las otras cosas que no sean
+constantes son palabras reservadas. Y como dije en una sesión anterior,
+son como lenguaje de perro. Bla, bla, bla, bla, "class". Bla, bla, bla, "del". Bla, bla, bla, "else". Bla, bla, bla, "lambda". Estas son palabras que cuando se las dices a Python, Python espera que signifiquen exactamente
+lo que Python quiere que signifique. Ahora, ¿por qué es esto especial? En realidad es algo instintivo.
+Solo significa que no las uses para otras cosas. No nombrar funciones, no nombrar
+clases, no nombrar variables. Lugares donde tienes opciones para usar palabras. No uses estas palabras. Y la mayoría
+de ellas no son un gran problema. No sé, tal vez "break" o "in", o "from", tal vez Algunas de estas las puedes usar naturalmente. La mayoría de ellas son
+probablemente bastante raras para que las uses como nombres de variables. Y el tercer átomo es básicamente variable. Y puedes elegir los nombres de las variables. Y es un poco raro que debas elegir los nombres de variables, pero te acostumbrarás. Y los nombres de variables son
+lugares donde le estás pidiendo a Python que asigne un poco de memoria y
+pegue algo, y tú estás eligiendo la etiqueta. Si observamos este diagrama. Cuando tenemos esta declaración de asignación, y recuerda que las declaraciones
+de asignación siempre tienen una dirección. Piensa que estos signos iguales
+tienen una flecha sobre ellos. En algunos lenguajes, vi un lenguaje
+que usa una especie de flecha, usa menor que y un guión como la asignación. Así es como debería ser porque la igualdad nos confunde. Porque igual significa algo diferente
+en matemáticas que en Python u otros lenguajes de programación. Así que mira esta primera declaración. Lo que realmente estamos diciendo,
+es una declaración bastante compleja. Después de un tiempo, solo la usarás. Python, encuentra una pieza libre de memoria en alguna parte y le asignas una etiqueta 'x' y pones 12.2 en ella. Y recuerda eso, recuerda todas esas cosas. Esa es una de las cosas que Python
+hace por nosotros, recuerda cosas. Luego pasamos a la segunda declaración. Dice, hola Python, encuentra
+un poco de memoria que tengas por ahí, asigna etiqueta 'y', le pones 14, ¿de acuerdo? Y así es como funcionan estas
+cosas y elegiste 'x' y elegiste 'y'. Ahora, si continuamos con este código, ahora tenemos otra línea y
+decimos, oye, 'x', espera un segundo. Ya te dije acerca de 'x',
+'x' ya existe, así que no busques cualquier memoria nueva, sino que pegas 100 en ella. Entonces entra 100 y limpia el valor anterior. Entonces, eso es lo que pasa. Cuando comienza esta secuencia,
+esto sucede primero, segundo, tercero. Y entonces lo tercero es lo último y entonces 'x' termina con un valor residual de 100 en ella. De eso se tratan las variables y declaraciones de asignación. Tienes algunas reglas sobre los nombres. Puedes iniciar nombres de variables
+con letras o guiones bajos, aunque evitamos guiones bajos porque Python usa
+guiones bajos para sus propios fines internos. Y el resto puede ser letras, números y guiones bajos. Y es sensible a mayúsculas y minúsculas. Pero no queremos que dependas de eso. Por lo tanto, spam con minúsculas,
+Spam con una mayúscula y SPAM. Todos estos son nombres de variables diferentes, pero no le estás haciendo un favor a nadie,
+si crees que eso es ser inteligente. A veces tendemos a usar mayúsculas
+para señalar cosas, de las que hablaremos más tarde, pero tendemos a usar principalmente minúsculas. Algunas aplicaciones usan lo que
+se llama "camel case", que es una mezcla. Sin embargo, mejor tiende a no
+depender del hecho de que estos son únicos porque realmente estás guiando mal a
+la persona que está leyendo tu código. Pero tenemos algunos buenos, spam,
+huevos, spam23, los números están bien. Está bien comenzar con un guión bajo. Es malo comenzar con un número. Es malo comenzar con un signo #,
+aunque eso se convierte en un comentario, no puedes usar caracteres que no sean
+letras y números en la variable. Y esos son todos buenos nombres de variables. Ahora llevamos estas cosas a instrucciones o líneas. Y entonces estas cosas. Esta es solo otra secuencia de código, y muestra cómo también se puede
+usar la variable en el lado derecho. Pone 2 en un poco de memoria y lo etiqueta como 'x'. Recupera ese 2 y luego le agrega 2. Entonces esta pequeña cosa aquí se convierte en 4. Y luego pega 4 en 'x'. Y luego esta es una función de impresión. Y la forma en que trabajan
+las funciones es el nombre de una función, seguido de un paréntesis, seguido de otro paréntesis. Y luego puedes imprimir algo, lo que quieras imprimir. Y esto hace que se vea 4 en la salida. Entonces, "print" es la función
+a la que se llama para provocar la salida. Hago hincapié en que una de las
+cosas claves sobre los nombres de variables es que tú le pones el nombre. Y tenemos una técnica llamada
+mnemotecnia. Creo que lo pronuncié bien. Y la idea es que cuando eliges un nombre de variable, debes elegir un nombre de variable que sea sensible, A Python no le importa si eliges
+nombres de variables con mnemotecnia o no. Y el nombre que elijas para una variable no comunica ninguna información
+adicional a Python, ¿de acuerdo? Entonces, cuando eres un estudiante principiante, a veces, si usas nombres de variables
+que son demasiado buenos, es confuso. Notarás cuando escribo código,
+especialmente en estos dos primeros capítulos, que uso nombres de variables
+realmente tontos y otros muy inteligentes. Lo hago así para enfatizar que siempre
+y cuando el nombre de la variable sea coherente dentro de un programa,
+no importa, y Python es perfectamente feliz. Aquí hay un pequeño código. Son cuatro líneas de código. Y comienza arriba, ejecuta esta línea
+y dice encuentra algo de memoria y llámala como esa cosa y pega 35 en ella. Encuentra un pedazo de memoria
+y lo etiquetas como esa cosa, pega 12 en ella. Saca esa primera cosa y saca la segunda cosa, los multiplicas y lo pones en una tercera variable. Si observas estas cosas realmente de cerca, son todas únicas y distintas, y tienes que mirarlos muy de cerca.
+Luego imprime la tercera cosa. Y Python ama este código. Python piensa muy bien. No sé por qué elegiste esas variables, no me importa. Lo único que me importa es que sean únicos. Python realmente no tiene opinión sobre estas variables. Pero si le das este código a un amigo y le dices: ¿Qué está haciendo este código allí? Estarán como, ¿por qué elegiste variables tan locas? porque tengo que mirar
+detalladamente y la diferencia entre estas dos cosas es solo la letra z y la letra p. En este estamos sacando el de la p y esta vez estamos sacando el de la z ¿verdad? Y estos dos solo tienen una diferencia de esas letras, creo. Quiero decir, podrías hacerlo. Python ama estas cosas. Para Python esto es código perfectamente comprensible. Para los seres humanos no es
+código perfectamente comprensible. Entonces, a la gente no le va a gustar, pero Python va a estar muy feliz. No puedo dibujar una serpiente
+feliz, de lo contrario la dibujaría. Entonces, esto es engañoso, malo, no amigable. Entonces, hagámoslo un poco más amigable. Podrías elegir nombres de variables. Python considera estas dos cosas
+como iguales, eso es lo mismo. Son totalmente iguales, a Python no le importa. Pero ahora nosotros podemos mirarlo
+y decir, ya veo. La primera variable es 'a' y estamos poniendo eso allí y la segunda variable es 'b'. Estamos poniendo algo en 'b'. Y luego
+las estamos multiplicando y la ponemos en 'c' y luego imprimimos la cosa 'c'. Es muy bonito. Entonces esto es un poco mejor, ¿verdad? Al menos podemos seguirlo y leerlo y
+entender qué va a hacer el código sin tener que comprobar si estos dos
+caracteres son los mismos o diferentes. Entonces eso es mejor, pero no es mnemotecnia, ¿de acuerdo? Mnemotecnia significa que elegimos
+un nombre de variable que tiene sentido para lo que estamos usando. Nuevamente, el nombre de la variable,
+Python ve las tres cosas como lo mismo. Lo que le importa a Python es que
+este coincida con esto, esto coincida con eso y eso coincida con esto. Pero los humanos son mucho más felices. Los humanos son mucho más felices. Ahora, entendemos mentalmente
+que la primera variable 35 fueron las horas. La segunda era la tarifa por hora y
+luego calculamos un pago y lo imprimimos. Entonces esto es realmente comprensible. El problema para los principiantes,
+es ser demasiado comprensible, ¿verdad? Es muy entendible. ¿Bien? ¿Python sabe sobre la nómina de sueldos? Porque si nombro una variable "horas", ¿No debería saber Python que eso significa horas? Y si nombro una variable "pago",
+¿significa que Python sabe de esto? Y la respuesta es no. Python trata a estos tres como iguales. Python no mira el nombre de tus variables y piensa oye, acabas de tener un error, ¿verdad? Entonces, ¿qué pasa si, por ejemplo,
+cambio este código y digo horas por horas? Y pienso que Python va a decir: oye, eso no tiene sentido. ¿Por qué incluso lo multiplicaría en un cálculo de nómina? ¿Por qué multiplicar horas por horas? Y la respuesta es que Python lo hará felizmente porque no está mirando esas palabras. Pero un ser humano que intenta entender tu código o trata de ayudarte, cuando estás
+escribiendo código o depurando tu código, estará muy agradecido de que hayas elegido buenos nombres. Y ahora puedo ver tu código, y si veo
+que dices pago igual a horas por horas, digo, ¿por qué multiplicaste horas por horas? ¿Realmente no querías multiplicar las horas por la tasa? Entonces las variables con mnemotecnia son solo para humanos. Más adelante veremos cosas que van
+a confundirte cuando nombre a una variable amigo y otra amigos. Y dirás, ¿entonces Python entiende los plurales? Y la respuesta es no, Python no entiende los plurales. Es realmente útil para leer cosas,
+cuando algo tiene más de una cosa puedes usar una variable que tenga un plural. Entonces, está bien, suficiente sobre eso. Espero haber aclarado mi punto. Estos son todos iguales para Python, pero los seres humanos ciertamente
+prefieren el segundo o el tercero. Y así, pero ten cuidado. Y después del Capítulo 10, comenzarás
+a usar mnemotecnia para variables y no será un problema. Pero en los primeros capítulos,
+tienes que preocuparte por eso. Como mencioné, las declaraciones de
+asignación no son como las matemáticas. Signo igual significa igualdad. Las declaraciones de asignación significan flecha. Y la clave es que casi puedes imaginarte
+como si hubiera una pequeña pared alrededor y calcula completamente esta expresión. Esta es una expresión, en el lado derecho, la reduce a una sola variable y luego
+la escribe en la ubicación de la memoria. Y es por eso que es posible tener
+la misma variable en ambos lados, porque este lado ocurre primero, ignorando este lado. Y luego, una vez que este lado está hecho,
+entonces lo pone en ese otro lado. Si, por ejemplo, 'x' antes de comenzar
+la declaración, tenía un 0.6. Es como si protegiera esta parte, calcula esta parte aquí sacando 0.6,
+el antiguo valor de 'x', haciendo el cálculo, ejecutando
+las cosas, obteniendo el nuevo valor. Y luego, después de que tiene
+ese nuevo valor, y solo entonces, almacena el 0.936 en 'x' y sobrescribe
+el 0.6 que estaba en 'x', ¿de acuerdo? Entonces un lado termina, produce
+un resultado, y luego puede sobrescribir. No significa que tenga que poner la variable en ambos lados. Pero es por eso que puedes ponerla. Entonces a veces diremos algo así como x = x + 1. Y esa es nuestra forma de sumar 1 a 'x'. Y eso es porque lo que sea 'x',
+tal vez 6 o algo así, se convierte en un 7. Y entonces el 7 entra en 'x' y luego lo sobrescribe a 7. Llamamos a esto incremento. Lo veremos pronto, ¿de acuerdo? Pero es por eso que puedes poner lo mismo. Ahora en matemáticas, x = x + 1
+no tiene absolutamente ningún sentido, pero en programación, es una de
+las cosas más comunes que hacemos. Bien, eso nos lleva a través de variables y constantes y ahora vamos a hablar un poco más
+en detalle sobre las expresiones.

@@ -1,0 +1,112 @@
+Así que "XML" es lo que llamamos
+el Lenguaje de Marcado Extensible. XML, al igual que otros formatos de
+serialización tiene caracteres especiales y algunas reglas sobre cómo
+construir el documento serializado, básicamente, a partir de
+las estructuras internas. Así que las reglas de XML y parte de la razón
+por la que el XML se vuelve popular, se hizo popular más o menos al mismo
+tiempo en que el HTML se hace popular. O casi se podría decir que
+que el XML influyó en el HTML. Pero la noción de usar < >
+como caracteres activos, como la forma de etiquetar
+o de marcar la información. Así es como funciona, y así funciona igual que el HTML,
+y hay etiquetas iniciales y finales. Y eso agrupa un montón de cosas
+y aquí <people> es una etiqueta. Y luego <person> y </person> esa es
+otra etiqueta y la etiqueta final. Y luego <name>
+y su etiqueta final de </name>. Y la forma de pensar sobre esto
+es que hay un elemento simple. Estos se llaman elementos o nodos, y tendremos un par de formas
+de visualizar estos que vienen. Y hay un tipo de elemento que
+sólo tiene un texto en medio. Y ese es el más simple,
+se conoce como un elemento simple. Y luego otro tipo de elemento como
+este <person> que en realidad tiene, esta especie de nodos
+secundarios asociados. Y así los elementos simples son estos, y entonces los elementos
+complejos son <person> y <people>. Estos elementos se anidan juntos. Y la sangría es sólo algo que estoy
+usando para que se vea bonito. Al XML realmente no le importa
+si pones espacios adicionales o no, pero ciertamente nos ayuda a nosotros,
+como seres humanos, entender mejor esto. Así que el propósito principal de
+XML es compartir datos estructurados. Era un subconjunto simplificado de este SGML, que era el precursor de ambos XML y HTML. El SGML era un poco difícil, así que podrías casi pensar que el XML
+es una versión simplificada del SGML. Aquí están los conceptos básicos.
+Tiene una etiqueta inicial y otra etiqueta final. Y esas son la etiqueta inicial y la etiqueta final. Etiqueta inicial, etiqueta final,
+etiqueta inicial, etiqueta final. Esas son las etiquetas iniciales
+y las etiquetas finales, las etiquetas finales son las
+que tienen la barra diagonal. Hay contenido textual, eso es lo que
+se encuentra entre las etiquetas. Ese es solo el texto y es lo que
+llamamos los nodos de texto. Y luego, hay atributos, y los atributos
+siempre están en las etiquetas iniciales. Así que el teléfono y el correo electrónico, son pares clave-valor que usan
+comillas, como el type="intl". Y lo importante de XML vs HTML es
+que podemos crear las etiquetas. En HTML decimos cosas como <h1>
+o <a> para la etiqueta de anclaje, o <h1> para el título nivel uno. Aquí, con base en cómo vamos a negociar
+entre las dos aplicaciones que intercambian datos, puedes decir que
+la etiqueta es <person> y </person>. Todavía tienes que seguir las reglas,
+como poner una diagonal en la etiqueta final. Así que atributos. Y luego también puedes
+tener una etiqueta de cierre automático. Y eso es, sólo tienes que incluir este
+/> al final de la etiqueta abierta. Y es como si tuvieras una etiqueta de cierre
+del mismo nombre con un área de texto vacía. Y eso es lo que esto está diciendo,
+es una etiqueta de cierre automático. OK, como dije, el espacio en
+blanco no importa tanto. Podemos sacar estas cosas,
+usualmente usamos sangrías como cualquier ambiente de programación
+para ayudar a nuestra propia lectura. Pero, en general, el espacio blanco, excepto en medio de cosas como estas
+áreas de texto, donde los espacios sí importan. Pero, más o menos, entre aquí y aquí,
+el espacio en blanco no importa. Entre aquí y aquí,
+el espacio en blanco no importa. Así que el espacio en blanco, estos
+espacios que use para sangrar el código, realmente no importa. El único momento que importan es
+cuando estás en un área de texto. Aquí tienes algunos ejemplos de XML,
+solo para darte algunas ideas. Aquí tenemos, siempre hay
+una gran etiqueta externa de XML, tienes una etiqueta inicial y una etiqueta final. Y sólo hay uno de esas, porque no
+puede ser definida múltiples veces. Siempre está la etiqueta exterior.
+Vemos una serie de atributos. ¿Verdad? Así que los atributos son key= y luego una cadena entre comillas,
+key="cadena". Y si miras al HTML, verás que esto es
+exactamente lo mismo que el HTML. La diferencia es que en HTML se supone que
+tiene una cosa llamada href= "blah, blah, blah", ¿cierto? Así que HTML es como un XML que es
+más altamente especificado. Mientras que esto es sólo dos programas
+que acuerdan un formato y lo usan. Así que tenemos una etiqueta exterior
+que es un elemento complejo. Y luego tenemos, en ese título, puedes tener cosa que estén
+en orden, como este ingrediente. Vemos algunos atributos ahí, y entonces tienes un bloque de texto
+en el medio de aquí. Así que ahorita veremos cómo funcionan
+estas cosas. Y luego tenemos una subetiqueta. Es como un árbol, lo veremos en un
+segundo, y una serie de pasos. Y para que estos puedan estar en orden,
+puede haber más de una de estas cosas. Y podemos crear todo tipo de estructuras
+que están realmente diseñadas basadas en las necesidades de las dos aplicaciones
+que están tratando de cooperar. Así que las etiquetas
+son el principio y el final. Los atributos son los pares clave-valor
+en la etiqueta inicial. La serialización y deserialización es el acto
+de tomar algo de una estructura interna en un ambiente de programación,
+enviarlo a través de la red. La deserialización es recibir
+algo a través de la red y traducirlo de vuelta a una estructura
+interna en la computadora destino. Así que podemos ver esto
+de un par de maneras diferentes. La más común y la palabra nodos
+viene de los árboles. Cada uno de estos es como un nodo
+porque más o menos se unen. Es un lugar de conexión,
+así que llamamos a esta cosa un nodo. Entonces, puedes pensar que el documento
+externo es el nodo superior del árbol. Es una especie de árbol al revés, en realidad. Si esto fuera un árbol, tendríamos un tronco. Y luego tenemos cosas como esta
+y una ardilla sentada aquí arriba, ¿verdad? Pero es una especie de árbol al revés. Y así tenemos la copa del árbol aquí
+y luego tiene dos nodos secundarios, el nodo b y el nodo c están
+directamente debajo del nodo a. Y luego modelamos, en un momento veremos por qué, modelamos
+el texto entre ellos como hijos. Así que es un hijo del nodo b, así que
+el texto es un nodo de texto, y es un hijo del nodo b. Así que el nodo b es todo esto,
+y luego este es el hijo del nodo b. Y el nodo c tiene dos hijos: d y e. Y d tiene como un hijo: Y
+y e tiene como hijo la Z. Estos son los elementos simples y complejos. Y luego está el texto dentro de los elementos. Pero, como dije,
+modelamos el texto como un hijo del nodo, como pronto verás, ahora mismo. Y eso es porque modelamos
+los atributos como niños diferentes. Entonces, si cambiamos esto un poco,
+y hacemos que esto tenga un atributo, w = "5". todo esto es parte del nodo b. Y la b tiene el área de texto,
+sólo hay uno de esas, y podría haber muchos atributos
+Podría haber muchos atributos. Sólo tengo w="5", y así uno de los hijos del nodo b
+es el atributo hijo o el texto hijo. Y puede haber muchos de
+estos atributos hijos, porque podría haber muchos atributos. Ya sabes que a="4", b="19",
+siempre tienen que tener comillas. Podrías tener muchos
+de estos atributos y son niños. Pero si agarra el nodo, y verás cuando empecemos a hablar sobre
+hacer esto en lenguajes de programación. Veremos por qué es importante
+entender lo que significa cuando tomas esto
+contra cuando tomas aquello. Eso no es lo mismo. X es el texto en el nodo b, y el nodo b es ese texto, y los atributos,
+y todo lo demás agrupado junto. Otra forma de pensar sobre esto y una forma de analizar el XML es
+a través de lo que llamamos rutas. En cierto sentido, lo que haces es
+dibujar el árbol y luego bajas por el árbol. Y así esta X se puede ver como un dato que está en /a/b. Así que empiezas desde arriba. Bajas al nodo a, bajas al nodo b,
+¿qué encuentras allí? Si bajamos por aquí, vamos del nodo a al c
+y de ahí al d, tenemos Y, esa es esta: /a/c/d. Así que esto es como una ruta. Y puedes pensar en esto como
+las carpetas en tu computadora. La carpeta a, luego hay dos carpetas
+dentro de la carpeta a, que son b y c, las carpetas hijo. Y luego dentro del la carpeta c
+hay carpetas hijo d y e. Y así como este de aquí es /a/c/e y
+decimos, ¿qué reside allí en /a/c/e? El texto que vive en /a/c/e es Z. Y esa es otra forma de pensar en el XML. Ahora, lo que vamos a hablar a continuación
+es un aspecto importante donde estamos tratando de decidir
+entre dos aplicaciones. Si estoy produciendo datos
+y estás consumiendo datos, y todo explota, ¿fue culpa de los datos,
+o fue culpa tuya? Y eso es lo que el Esquema XML
+hace por nosotros.

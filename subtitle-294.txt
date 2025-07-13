@@ -1,0 +1,234 @@
+Así que iniciamos todo este curso
+imprimiendo hola mundo y solo dijimos "Hola mundo" y nos sale Hola mundo. Y sería bueno si eso fuera super simple. Y sabes, en 1970, era simple porque había más o menos
+un solo conjunto de caracteres. Incluso en 1970, cuando yo comencé,
+ni siquiera teníamos minúsculas, solo teníamos caracteres en mayúscula. Y te diré que éramos felices cuando
+solo teníamos caracteres en mayúscula. Ustedes en estos días con sus
+caracteres en minúscula y números y barras y todo eso. El problema que tienen las computadoras
+es que tienen que encontrar una manera, Es decir, las computadoras no
+entienden las letras, en realidad. Lo que las computadoras
+entienden son números, por lo que tuvimos que inventar un
+mapeo entre letras y números. Entonces, se nos ocurrió un mapeo y
+han habido muchos mapeos históricamente. El que es el mapeo más común, es de la década de 1980, es
+este mapeo llamado ASCII. El Código Estándar Estadounidense
+para el Intercambio de Información. Y este código básicamente dice:
+este número es igual a esta letra. Entonces, por ejemplo,
+el número para Hola Mundo para la H mayúscula el número es 72. Alguien decidió que
+la H mayúscula sería 72. para la e minúscula, el número es 101. Y una nueva línea es 10. Así que si fueras
+realmente a mirar lo que está sucediendo dentro de la computadora,
+los está almacenando como números. Pero el problema es que hay 128 de ellos. Lo que significa que no se
+puede poner cada carácter de 0 a 128. Y así, al puro principio solo tratábamos
+con los caracteres que fueran posibles. Como dije, cuando comencé
+solo podías usar mayúsculas. Ni siquiera podías usar minúsculas, pero existe esta función, siempre que
+estés tratando con valores simples. Le puedes decir: Hey,
+¿Cuál es el valor real para la letra H?. Y se llama ord, que significa ordinal. ¿Cuál es el ordinal? ¿Cuál es el número que
+corresponde a la H? Y ese es 72. ¿Cuál es el número que
+corresponde a la e minúscula? Es 101. ¿Y cuál es el número que
+corresponde a nueva línea? Y ese es el 10. Recuerda que la nueva línea
+es un caracter individual. Esto también explica por qué
+las letras minúsculas son todas mayores que las letras mayúsculas,
+porque son ordinales para ASCII. Ahora bien, hay muchos grupos
+de caracteres, pero sólo para los 128 caracteres de la vieja escuela,
+que podíamos representar con ASCII, las letras mayúsculas tenían un ordinal
+más bajo que las letras minúsculas. Entonces, Hi es menor que zzz todo en minúsculas, y eso es porque
+todas las letras minúsculas son menores. Perdón, todas las letras mayúsculas son
+menores que todas las letras minúsculas. En realidad, esto debe ser AAA, eso es lo
+que debería haber dicho allí, ¿OK? no te preocupes por eso. Solo debes saber que
+todos son números. Y en los primeros días,
+la vida era simple. Almacenábamos cada carácter
+en un byte de memoria, también conocido como
+ocho bits de memoria. Es lo mismo que cuando dices,
+tengo una USB de muchos gigabytes, una memoria USB de 16 gigabytes que
+tiene 16 mil millones de bytes de memoria allí. O sea que, en los viejos tiempos, podríamos
+poner 16 millones de caracteres aquí ¿OK? Entonces el problema es en que
+en los viejos tiempos teníamos tan pocos caracteres que podíamos
+poner un carácter en un byte. Y, la función ord nos dice el valor
+numérico de un carácter ASCII simple. Y así como dije, si
+echas un vistazo a esto la letra e es 101
+y la letra H mayúscula es 72. Y luego la nueva línea que está
+aquí como avance de línea, es 10. Ahora podríamos representarlos en
+hexadecimal que es base 16 o octo que es base 8. O binario, que es lo que realmente
+sucede, que no es nada más que 0 y 1. Pero este es el binario para 10. 0001010, por lo que estos 3 son solo
+versiones alternativas de estos números. Los números van hasta 127, si miras
+al binario, puedes ver que, esto es en realidad 7 bits de binario. Podrías ver que son todos son 1,
+comienza en ceros y luego pasa a unos. Pero 0 y1 son lo que las
+computadoras siempre hacen. Y si te vas hasta al hardware,
+los pequeños cables y demás, los cables solo están tomando ceros y unos. Así que esto es lo que
+hicimos en los años 60 y 70 solo dijimos todo lo que seamos capaces
+de incluir y estamos totalmente felices. No vamos a tener nada
+complicado y como dije a mediados de mi carrera de pregrado
+empecé a ver letras minúsculas. Estaba como, eso es realmente
+hermoso, letras minúsculas. Ahora, el mundo real
+no es nada como esto. Hay todo tipo de caracteres. Y tuvieron que idear un esquema
+para mapear estos caracteres. Y por un tiempo hubo una gran cantidad
+de formas incompatibles para representar caracteres distintos a estos ASCII,
+también conocidos como caracteres latinos. También conocido como
+caracteres árabes. Estos otros caracteres simplemente
+inventaron su propia forma de representación. Pero tenías estas situaciones en las que las
+computadoras japonesas no podían hablar con computadoras estadounidenses o
+con computadoras europeas - del todo Es decir, las computadoras japonesas tenían
+su propia forma de representar caracteres. Y las computadoras americanas tenían su
+propia forma de representar caracteres y simplemente no
+podían hablar entre sí. Pero inventaron esto
+que se llama Unicode. Y así, Unicode es este
+código universal para cientos de millones de caracteres diferentes y
+cientos de grupos de caracteres. Entonces, en lugar
+de decir lo siento, no encajas con tu idioma
+de alguna isla de los Mares del Sur, No hay problema, tenemos
+espacio en Unicode para eso. Y así, Unicode tiene muchos y
+muchos caracteres, no solo 128. Muchos, muchos caracteres. Y entonces hubo un tiempo,
+como dije, en los años 70 y los 80 donde todo
+el mundo tenía algo diferente. E incluso a principios de los 2000,
+lo que sucedió fue que la Internet salió y ahora era importante
+tener una forma de intercambiar datos. Y tuvimos que decir oh, bueno,
+ya no es suficiente que las las computadoras japonesas puedan
+hablar con las computadoras japonesas. y para computadoras americanas puedan
+hablar con las computadoras americanas, queremos que las computadoras japonesas
+y americanas puedan intercambiar datos. Entonces construyeron estos grupos
+de caracteres, lo que da origen al Unicode, que es una especie de abstracción de
+todos los diferentes caracteres posibles. Y hay diferentes formas de representarlos
+dentro de las computadoras. Y tenemos un par de cosas simples que
+podrías pensar que son buenas ideas que resultan no ser tan
+buenas ideas, aunque se usan. Entonces, lo primero que hicimos
+fueron estos UTF-16, UTF-32 y UTF-8 que son básicamente formas de representar
+un grupo de caracteres más grande. Ahora el gigantesco es de 32 bits,
+que es de 4 bytes. Es 4 veces más datos
+para un solo carácter. Y eso es una gran
+cantidad de datos, entonces estás dividiendo el número
+de caracteres por cuatro. Si esto tiene 16 GB, entonces solo puede
+manejar 4 mil millones de caracteres. Dividido por cuatro, correcto,
+cuatro bytes por caracter. Y eso no es tan eficiente. Y luego, hay un compromiso
+como si tuviera dos bytes, pero luego tendrías que elegir. Esto puede tener todos los caracteres. Esto puede tener ciertos
+lotes de grupos de caracteres. Pero a pesar de que podrías
+pensar instintivamente que UTF-32 es mejor que UTF-16
+y que UTF-8 es el peor. Resulta que UTF-8 es el mejor. Entonces, UTF-8 básicamente dice que
+va a ser ya sea 1, 2, 3 o 4 caracteres y hay pequeñas marcas que le
+dicen cuándo pasar de uno a cuatro. Lo bueno de esto es que UTF
+se superpone con ASCII, ¿Verdad? Y así, si los únicos caracteres que estás
+poniendo son los ASCII originales o el grupo de caracteres latinos I, entonces
+UTF-8 y ASCII son literalmente lo mismo. Y luego se usa un caracter especial que
+no es parte de ASCII para indicar cambio de caracteres de un byte
+a caracteres de dos bytes a caracteres de tres bytes
+o de cuatro bytes. Entonces es una longitud variable. Y así se puede detectar automáticamente,
+puedes estar leyendo una cadena y dices, acabo de ver
+este caracter marcador extraño. Debo estar en UTF-8. Y luego, si estoy en UTF-8, entonces
+puedo expandir esto y encontrar, todos esos sets de caracteres y todos
+los caracteres de esos sets representados. Y así lo que ocurrió fue que
+pasaron por todas estas cosas y como puedes ver en este gráfico, el gráfico
+realmente no dice mucho más que el hecho de que UTF-8 es asombroso y
+se hace más asombroso cada día. Y cualquier otra forma de representar datos
+se está volviendo menos asombrosa, ¿Verdad? Y estamos en el 2012, así que eso
+fue hace mucho tiempo. Así que, esto fue como,
+UTF-8 es lo mejor, y eso es realmente porque, tan pronto como
+surgieron estas ideas, fue muy claro que UTF-8 es la mejor práctica para codificar
+datos que se mueven entre sistemas. Y por eso estamos
+hablando de esto ahora. Finalmente, con esta red estamos haciendo
+sockets, estamos moviendo datos entre sistemas. Entonces tu computadora podría estar
+hablando con una computadora en el Japón y tienes que saber cuál set de
+caracteres está saliendo, ¿Correcto? Y es posible que obtengas caracteres
+japoneses a pesar de todo lo que te he mostrado no son caracteres japoneses o
+caracteres asiáticos o lo que sea, ¿Cierto? Entonces UTF-8 resulta ser la mejor práctica si estás moviendo un
+archivo entre dos sistemas. O si estás moviendo datos de red
+entre dos sistemas, recomendamos, el mundo recomienda UTF-8, ¿OK? Entonces, si piensas en tu computadora,
+dentro de tu computadora, las cadenas que están dentro,
+tu Python como X=hola mundo, realmente no nos importa
+cuál es su sintaxis. Y si hay un archivo generalmente
+Python se ejecuta en la computadora y el archivo tiene el mismo set de caracteres.
+Pueden ser UTF-8 dentro de Python. Puede ser UTF-8 adentro,
+pero no nos importa. Abres un archivo y es por eso que no tuvimos que hablar de
+esto cuando estábamos abriendo archivos. Aunque es posible que algún día
+encuentres un archivo diferente a tu set normal de
+caracteres, eso es raro, ¿OK? Entonces los archivos están
+dentro de la computadora. Las cadenas están
+dentro de la computadora. Pero las conexiones de red no lo están
+y cuando llegamos a las bases de datos vamos a ver que tampoco están
+dentro de la computadora. Y esto también es algo que cambió
+de Python 2 a Python 3. En realidad fue algo grande,
+algo importante. Y la mayoría de la gente piensa que es
+genial, de hecho, yo creo que es genial. Algunas personas
+están molestas al respecto, pero creo que esas personas solo
+son personas que le temen el cambio. Entonces, había dos tipos
+de cadenas en Python, había una cadena normal
+y una cadena Unicode. Y podemos ver que Python 2 era capaz
+de crear una cadena constante, y ese es el tipo de cadena y una para una Unicode
+se pone una u antes de las comillas. Y esas son dos cadenas diferentes,
+y luego tenías que convertir entre, las cadenas Unicode y las cadenas. Lo que hemos hecho en Python 3 es
+esta es una cadena normal y esta es una cadena Unicode, pero
+notarás que ambas son de tipo cadena. Entonces dentro del mundo de Python,
+si vas a meter cosas, puede que tengas que convertirlas. Pero dentro de Python todo es Unicode. No tienes que preocuparte por eso, cada cadena igual ya sea que
+tenga caracteres asiáticos o caracteres latinos o caracteres
+españoles o franceses, funciona igual. Entonces esto lo simplifica, pero entonces hay ciertas cosas de las
+que vamos a tener que ser responsables. Entonces, el tipo de cadena que
+no hemos usado todavía pero se vuelve importante.
+Y está presente en Python 2 y Python 3. ¿Recuerdas que, en los viejos tiempos,
+un caracter y un byte eran lo mismo? Y siempre ha habido algo así
+como una cadena de bytes y y se construye usando el prefijo b. Y eso dice, esta es una cadena de
+bytes que representan este caracter, y si nos fijamos en la cadena
+de bytes en Python 2. y luego miras una cadena normal
+en Python 2, ambas son de tipo cadena. Los bytes son iguales a las cadenas,
+y el Unicode es diferente. Entonces estas dos son iguales en Python 2,
+y estas dos son diferentes en Python 2. No estoy haciendo una
+muy buena imagen de eso. Así que la cadena de bytes y
+la cadena normal son iguales. Pero la cadena regular y
+la cadena Unicode son diferentes. Entonces, lo que sucedió en Python 3
+es que la cadena regular y la cadena Unicode son iguales. Y ahora la cadena de bytes y
+la cadena normal son diferentes, ¿OK? Entonces los bytes
+resultan ser crudos, sin codificar, eso podría ser UTF-8,
+podría ser UTF-16, podría ser ASCII. No sabemos qué es,
+no sabemos cuál es su codificación. Esto es lo que tenemos que manejar
+cuando estamos tratando con datos que vienen de afuera. Entonces, en Python 3, todas las cadenas
+internamente son Unicode. No UTF-8, no UTF-16, no UTF-32, y si solo abres un archivo,
+generalmente funciona. Pero si hablas con una red,
+entonces tenemos que entender. Ahora la clave es que
+tenemos que decodificar estas cosas. Tenemos que saber cuál es el set de
+caracteres de lo que estamos recibiendo. Ahora bien, lo bueno es, que el 99% o
+tal vez el 100% de las cosas con las que vas a trabajar usa UTF-8,
+resulta ser relativamente simple. Entonces, hay esta pequeña operación de
+decodificación, si vemos este código aquí. Cuando hablamos con un recurso externo,
+recibimos un arreglo de bytes, igual que el socket nos da un arreglo
+de bytes que son caracteres. Pero necesitan ser decodificados para saber
+si son UTF-8, UTF-16 o ASCII. Entonces, existe esta función
+que es parte de los arreglos de bytes data.decode dice "resuelve esto". Y lo bueno es que puedes
+decirle cuál set de caracteres es, pero, por defecto, asume que es
+UTF-8 o ASCII dinámicamente. Debido a que ASCII y UTF-8
+son compatibles entre sí. Entonces, son datos viejos es probable que
+sean ASCII, si son datos más nuevos, probablemente estás recibiendo UTF-8. Y literalmente,
+es una ley de retorno decreciente, es muy raro que obtengas
+algo distinto que esos dos, así que casi nunca tienes
+que decirle qué es, ¿Correcto? Entonces solo dices decodifícalo, míralo. Puede ser ASCII, puede ser un UTF-8, pero sea lo que sea, para cuando
+termina con eso, es una cadena. Todo es Unicode dentro de esto.
+Así que esto es bytes. Y esto es Unicode. Entonces la decodificación
+va de bytes a Unicode. Y también puedes ver que cuando
+necesitamos enviar os datos, vamos a convertirlos en bytes. Entonces encode toma esta cadena
+y la convierte en bytes. Entonces esto serán bytes que están
+codificados adecuadamente en UTF-8. De nuevo, se puede algo aquí,
+UTF-8, pero asume que es UTF-8. Y todo esto es ASCII, por lo que en
+realidad no hace nada, pero está bien. Y luego enviamos bytes al comando. Entonces tenemos que enviar cosas,
+luego recibimos, decodificamos, y cuando las enviamos,
+las codificamos. Afuera en el mundo real,
+es donde está el UTF-8. Aquí solo tenemos Unicode. Entonces, antes de enviar y antes de
+recibir, tenemos que codificar y decodificar esto para
+que funcione correctamente. Puedes ver la documentación
+de la codificación y la decodificación. Decode es un método
+en la clase de bytes. Y dice, puedes ver lo que
+estamos diciendo de la codificación, puedes decir que no es UTF-8,
+ASCII y UTF-8 son lo mismo. El valor predeterminado es UTF-8, que es
+probablemente todo lo que vas a usar, e igual, las cadenas pueden codificarse
+usando UTF-8 en un arreglo de bytes y luego enviamos ese arreglo
+de bytes hacia el mundo exterior. Y suena más complejo de lo que es. Entonces, después de todo eso,
+piensa de esta manera. Al salir, tenemos una cadena interna. Antes de enviarla, tenemos que codificarla,
+y luego la enviamos. Cuando nos devuelven cosas,
+las recibimos, vienen como bytes. Sabemos que son UTF-8 o dejamos
+que se detecte UTF-8 automáticamente y la decodificamos y ahora
+tenemos una cadena. Y ahora internamente dentro de
+Python podemos escribir archivos, podemos hacer todo tipo de cosas
+y todo funciona de manera conjunta. ¿Es solo que esto es UTF-8? Este es el mundo exterior. Y entonces tienes que mirar tu programa y decir, bien, ¿Cuándo necesito
+hablar con el mundo exterior? Bueno, en este caso, es cuando estoy
+hablando con un socket, ¿Verdad? Estoy hablando con un socket, así que
+tengo que saber lo suficiente para codificar y decodificar a medida que
+entro y salgo del socket. Así que parece un poco raro cuando de
+un momento a otro empezamos a ver estas codificaciones y decodificaciones. Pero en realidad tienen sentido. Hay una especie de barrera entre
+el mundo exterior y nuestro mundo interior. Adentro, todos nuestros datos son totalmente
+consistentes y podamos mezclar cadenas de varias fuentes sin tener en cuenta
+el set de caracteres de esas cadenas. Entonces, ahora lo que vamos a
+hacer es reescribir ese programa. [RISAS] Es un programa corto, pero
+lo vamos a hacer aún más corto.

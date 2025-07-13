@@ -1,0 +1,118 @@
+Así que ahora vamos a pasar a escribir
+código en Python para tratar con XML. No es muy difícil porque como la mayoría
+de las cosas que hacemos en Python, lo primero que hacemos es una declaración
+de importación que hace la mayor parte de el trabajo para nosotros. Así que esto es importar una biblioteca
+xml.etree.ElementTree y esta ET entonces se convierte en un alias. La sintaxis de "as" es como un alias. termina siendo una abreviatura para que no
+tengamos que escribir todo eso. Ahora vamos, normalmente estaríamos
+leyendo todos estos datos con urllib y read y lo que sea
+y entonces lo analizaríamos. Pero sólo para que esto sea lo más sencillo
+en una sola pantalla lo he mantenido simple. Y por eso tengo una cadena. Esta es una nueva sintaxis que
+no has visto antes, probablemente, y esa es la cadena de tres comillas. Una cadena de tres comillas en Python es
+una cadena que probablemente es multi-línea. Y ese es el comienzo de la cadena. La cadena termina aquí abajo. Las nuevas líneas que están aquí
+son parte de la cadena. Bien, así que esto es como si leyéramos estas cosas de aquí a aquí
+en un archivo o desde la web. Así que esta es mi forma de
+emular un urllib y un read para que podamos verlo
+todo en una misma pantalla. Aquí está nuestro XML. Y vemos que es un XML bien formado. Tenemos una etiqueta inicial
+y una etiqueta final, y vean que es lo mismo
+que hemos estado haciendo. Tenemos que analizarlo. Y esto es más o menos como lo que
+hacemos con HTML y BeautifulSoup. Tenemos que extraer estos datos de
+la cadena y obtener un objeto de vuelta y después trabajar con ese objeto. Y así que tomamos estos datos de
+la cadena, los pasamos a ET.fromstring. Y lo que dice es
+"toma esta cadena y nos devuelves básicamente un buen árbol". Así que para recordar esas imágenes
+de árboles, devuélvenos estos árboles y haz que todo tenga sentido. Todavía sigue teniendo lo mismo
+como Chuck y el número de teléfono 303. y demás componentes. Están todos ahí, ¿verdad? Sólo ha construido esto como
+una estructura de memoria interna dentro de Python. Y eso es lo que obtenemos
+de ET, que es esto, que entra en esta variable
+de árbol justo aquí. Así que tenemos este árbol de
+información que se analiza correctamente. Ahora esto podría explotar. Esto podría rastrearse al código. Si tienes un error de sintaxis como que
+no pusiste la barra inclinada o algo así, esto fallaría. Digamos que tienes un
+HTML malo o un XML malo. Y eso es lo que tienes que hacer. Pero cuando todo está dicho y hecho,
+si esta línea de código tiene éxito, entonces tienes un buen XML
+y puedes darle sentido, ¿de acuerdo? Así que lo que podríamos hacer es decir dentro de esos datos XML,
+busca el nombre de la etiqueta. Así que básicamente,
+tree.find('name') me encuentra eso. Si piensas en esto en una pequeña foto,
+tenemos la etiqueta <name>. Y luego recuerda que
+la etiqueta hijo era Chuck. Así que toda la etiqueta es esto. Y luego para bajar y obtener solo
+este fragmento de Chuck, decimos .text Así que esto es esto. Y también es eso. Así que si quieres obtener el texto
+que está entre la etiqueta name y dices tree.find, la etiqueta
+'name', y luego .text. Y ese texto es un atributo de este
+nodo particular que me devuelve esa cosa. Y si quieres obtener un atributo,
+y no el nodo de texto, puedes decir, OK, encontrarme el correo electrónico,
+que es esto, que es esto. Si miras el correo electrónico, se ve así,
+el correo electrónico es el nodo, y tiene un atributo de 'hide', y qué, sí. Y no hay texto, ¿verdad? Porque esta es una etiqueta de
+cierre automático por lo que esto no existe. Así que decimos tree.find('email'). Eso nos lleva a toda esta cosa,
+y luego llamamos al método Get y decimos decimos, get('hide'). Y eso le pide que me encuentre el atributo
+llamado 'hide' dentro de la etiqueta 'email' entonces nos devuelve, sí. Así que toda esta expresión,
+tree.findemail('email').get('hide') nos da "sí". Y eso nos permite trabajar
+a través de algún XML y extraer cosas del XML. Y eso es lo que tenemos que hacer
+cuando estamos en un programa. Y lo que queremos Y esa es la sintaxis para analizar el XML. Y si vas en línea, verás muchos y muchos ejemplos de
+cómo extraer datos de XML. Cuando escribo código como este,
+suelo tener que imprimir tree.find('email') y entonces obtengo algunas cosas. Así que estas expresiones tienden
+a ser largar al trabajar a lo largo de un árbol de XML. Y entonces encuentras una cosa. No esperes que necesariamente puedas
+escribir este código perfecto la primera vez. Escribes un poco, luego
+agregas un poco más, luego agregas un poco más, luego
+agregas un poco más, y finalmente ves lo que quieres extraer
+de tu árbol de datos. Así que puedes tener una etiqueta, que sea
+una etiqueta simple que tiene un hijo, o puedes tener una etiqueta
+que tiene múltiples etiquetas. Y así, usamos una forma diferente
+si hay múltiples etiquetas hijo. Entonces, aquí tenemos,
+de nuevo, la simple, la técnica de comillas triples en la que
+la etiqueta exterior es <stuff> y hay una etiqueta de <users> debajo de
+eso, y luego hay un número. Así que la idea aquí es que tenemos
+muchos punto punto punto punto punto. Muchos <users>. <user>, <user>, <user>,
+tenemos x=7, un id, y cada <user> tiene un poco de datos, etc., etc. Ahora queremos ser capaces de
+escribir código que va a pasar por cada una de estas etiquetas <user>. Así que vamos a usar el método findall. Y de nuevo, tomamos todo el
+texto, lo pasamos a fromstring, y recuperamos un objeto. <stuff> es un árbol de
+información que analizamos y nos da métodos y atributos que
+podemos usar para recorrer los datos. Así que eso es lo que hace esto. Lo llevamos del mundo exterior
+al mundo interior en Python. Ahora, lo que vamos a hacer
+es que vamos a decir "oh, OK", vamos a llamar el método findall ahí. Y vamos a buscar la etiqueta <users>, todas
+las etiquetas <user> debajo de <users>. Así que eso es lo
+que significa findall, nos dice, hay un montón de estos;
+bajo <users> hay etiquetas <user>. Encuentra a todos ellos y
+y luego dámelos todos a mí. Lo que básicamente obtienes son estas
+etiquetas, excepto que están en una lista. Así que estas etiquetas están en una lista. No solo la palabra Chuck y Brent,
+sino que toda la etiqueta. En cierto sentido, es una lista que en sí
+misma contiene pequeños árboles, ¿verdad? Eso es un árbol. Eso es un árbol. Así que esta es una lista de etiquetas,
+que son mini árboles con información. Así que esta es una lista, no es una
+lista de cadenas sino una lista de etiquetas. Pero podemos
+preguntarnos ¿qué tan larga es? Así que imprimiremos cuántas hay, y luego
+podemos hacer un bucle a través de ellas. Sólo hay una pequeña lista, ¿verdad? Así que es una lista de dos cosas, tiene un
+pequeño árbol aquí, coma, un pequeño árbol, árbol pequeño, así que
+eso es lo que vamos a hacer. Vamos a escribir un bucle
+"for" que recorra eso y vamos a tener un item que va a iterar
+a través de cada una de estas cosas. Puedo llamar esa etiqueta, una etiqueta
+en la lista de etiquetas, eso tendría sentido. Y así el item va a tomar los
+valores sucesivos de esta lista. Este bucle "for" va a correr dos veces. Va a correr una vez para esto
+y otra vez para eso. Y eso es lo que está pasando. Y lst es, lst es esa estructura de datos. Así que ahora, cuando entremos aquí,
+tendremos una pequeña etiqueta. La primera etiqueta <user>
+se ve así con una x=2 y luego una etiqueta hijo de <ID> y luego una etiqueta hijo de <name>
+y la primera va a ser 001 y Chuck. Así que el item va a apuntar a esto. Así que podemos entonces
+hacer ese mismo tipo de cosas. Podemos decir, dentro del item, encuentra
+la etiqueta <name> y eso extrae esto y luego saca el texto para mi. Así que esta parte me imprime "Chuck". Lo mismo para buscar la etiqueta <ID>. Ve a buscar la etiqueta <ID>
+y luego extrae el campo de texto eso nos va a imprimir 001
+y podemos tomar el item y luego está el atributo
+que está directamente debajo de él. Y luego el bucle se ejecuta de nuevo
+y ahora apunta a esta parte de aquí. Así que item ahora está
+apuntando a esa etiqueta. Y dice: busca la etiqueta
+<name> y encuentra el texto. Así que busca la etiqueta <name> y
+luego busca el texto en la etiqueta <name>. Y eso se imprime y luego
+se ejecuta esta línea. Ve y busca la etiqueta <ID>. Ve y busca la etiqueta <ID>. Encuentra la etiqueta <ID> y
+y luego extrae el texto de eso, así que 009 se va a imprimir allí. Y luego de la etiqueta original
+ve a buscar el atributo x. Eso es lo que es item.get("x"). Y entonces serán 7. Eso es lo que nos va a dar allí. Así que eso va a extraer eso. En esos dos ejemplos, te he mostrado
+cómo cavar a lo largo de un árbol o ejecutar un bucle a lo
+largo de una lista de árboles. Esa era una lista de árboles. Árbol, árbol,
+esas son las dos cosas básicas que se tienden a hacer
+cuando se analiza XML. Navegar por un árbol o bien obtener una
+lista de árboles y navegar por esos árboles. Y a veces tienes
+listas dentro de listas y árboles dentro de árboles, y
+puede ser muy complejo. Y tus programas se pueden volver
+complejos, pero tarde o temprano los haces trabajar y por eso
+el esquema es tan importante. Porque una vez que tu código
+funciona y si se cambia esa estructura, el código explota de mala manera
+y después quieres gritarle a alguien. Dices, ¿por qué cambiaste el XML? Y te contestan,
+bueno, yo no cambié el XML. Y dices, espera, aquí está el esquema
+que prueba que si cambiaste el XML. Eso nos lleva a través de XML,
+y hay muchos desafíos para XML, XML es una forma
+muy rica de serializar datos. Ahora, vamos a hablar de una forma
+más ligera de almacenar datos llamada JSON, o Notación de Objetos JavaScript.

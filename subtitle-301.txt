@@ -1,0 +1,135 @@
+Tenemos 2 aplicaciones que cooperan,
+y tienen que enviarse datos entre sí, y tienen un desacuerdo
+sobre si los datos son correctos o no. Un lado podría explotar o
+el otro lado podría explotar y es como, ¿de quién es la culpa? Por lo tanto, es importante definir un
+contrato sobre lo que es un XML aceptable. Eso está realmente fuera de
+cualquiera de las aplicaciones. No puedes decir, el XML
+que funciona es el XML. El XML correcto es el que
+hace que mi programa no explote. Esa no es la mejor manera de definirlo,
+así que tenemos que definirlo en el momento del intercambio de datos,
+y eso es lo que hace el esquema XML. Es una forma de definir fuera de cualquier
+programa, y luego verificar por separado. Así que este lado puede decir
+que envié cosas buenas, y este lado dijo que recibí cosas
+buenas o que recibí cosas malas. Así que puedes mirar un
+documento y puedes decir que sí, esto se valida, o no, no se valida. Y la validación no es el acto
+de transferir los datos o incluso deserializar los datos. La validación es el acto de verificar que
+los datos estén en el formato correcto. Es un contrato. Así que si estás
+trabajando con algo como un sistema de reservas de aerolíneas
+que trabaja con un sistema de aerolíneas, Perdón, con un sistema de hotel,
+podrías decir OK, aquí está el esquema. Y lo publican por separado y
+acuerdan en que ese es el esquema. Así que si más tarde el XML comienza
+a cambiar de mala forma y rompe un lado o el otro, se puede saber cuál lado
+fue el que empezó a cambiar. Así que la validación XML es el acto de tomar
+un documento y un contrato de esquema, que a su vez es también un documento XML,
+y que luego se envía al validador. No vamos a pasar
+mucho tiempo con esto, pero es un concepto importante para
+imaginar y entender cómo los contratos entre las aplicaciones de cooperación
+tienen que ser desarrolladas. Y aquí hay un poco de XML. Así que
+alguna etiqueta <person> de XML, recuerda que la exterior una sola etiqueta,
+y luego tengo tres etiquetas hijo. Sabes el apellido, la edad, la fecha de
+nacimiento y luego tenemos un contrato. Y como dije, el contrato mismo es XML
+con un par de etiquetas de aspecto extraño. Y lo que el XML está tratando de decir,
+ya sabes, qué tipo de etiqueta es esta, la cantidad de datos
+que se debe poner en ella. ¿Podemos tener alguna
+etiqueta hijo debajo de ella? Todo ese tipo de cosas
+son las preguntas que se responden en el contrato. Y así esta xs;complexType
+como hemos dicho antes, un elemento que pueden tener hijos se llaman complejos
+y los elementos que no, se llaman simples. Y esto básicamente dice que, en este XML
+en particular, se espera que la externa sea una etiqueta se llama
+<person> y eso es lo que dice. Entonces dice es que dentro de eso
+va a haber una secuencia de etiquetas, xs:sequence. Y entonces básicamente decimos oh, y habrá una etiqueta llamada <lastname>
+y va a ser una cadena. Y luego tenemos una etiqueta <age>
+y esa es un número entero. Y hay otra etiqueta llamada <dateborn>
+y esa va a ser una fecha. Y así podemos ver esto
+y decir una externa <person> después <name>, <age>, esa es un número,
+está bien; está es una cadena, está bien. Esta parece ser una fecha, está bien. Bien, bien, bien, bien, bien. Este XML coincide con
+ese contrato y es la idea. Cuándo tengas que hacer una de estas, tendrás que leer todo tipo de cosas de
+y averiguar cómo se hace todo esto. Solo quiero que entiendas
+que estas cosas existen y no son imposibles de leer. Y resulta que, de nuevo,
+a principios de los 90, había un número de estos lenguajes de esquema
+que estaban ahí y te los encontrarás. En su mayoría estoy hablando del que
+ganó o el que es más probable que te encuentres estos días, es un
+Esquema XML del Consorcio World Wide Web. Se llama XSD y suele estar
+al final del archivo que recibes, si solo tengo un archivo y te envío
+el XML tengo un sufijo de .xml, y si te envío un esquema, normalmente te
+envío un archivo .xsd, y por eso simplemente lo llamamos XSD y ese es del que
+vamos a hablar ahora mismo. Empecemos. Ese es. Hay otros. Solo quiero que sepas
+que hay otros ahí afuera. Como dije, me gustaría comenzar. Tienes elementos complejos, tienes
+elementos simples, tienes una secuencia. Esos son los fundamentos de
+las etiquetas que se ponen en el XSD. Puedes hacer más cosas, te acabo
+de dar las cosas más sencillas. Y así, por ejemplo, puedo decir básicamente,
+OK, esta etiqueta, ¿cadena completa? Quiero que haya una cosa llamada
+<full_name>, hay una secuencia. Así que esta es la secuencia,
+podemos ver que esta es la secuencia. Y quiero que esto sea
+minOccurs=1, maxOccurs=1. Eso significa básicamente que
+va a ser uno y exactamente uno. Uno y exactamente uno. MinOccurs si tienes
+menos de uno, es un error, si tienes más de uno, es un error. Esta de aquí, esta etiqueta. Esta puede ocurrir de 0 veces hasta 10. Esto significa que si hay entre 0 y 10 de esas etiquetas entre <full_name> y </person>, estamos felices.
+Y esos minOccurs y maxOccurs nos dicen básicamente cuántas veces estas cosas deben aparecer. Así que de nuevo esto es sólo un poco más sofisticado XSD. Ya hemos jugado con un par
+de tipos diferentes de datos. Hemos hablado de cadena,
+hemos hablado de fecha. Hablaremos de la fecha
+con un poco más de detalle. Fecha, hora, decimal y número entero. Así que entiende la diferencia entre
+un punto flotante y un número entero. Así que puedes dar una
+opinión sobre lo que quieres ahí. Una cadena, por supuesto, es casi cualquier
+cosa y las fechas son especiales. El formato de fecha seleccionado,
+por supuesto, si vas a otros países la fecha es todo tipo de cosas diferentes. El formato de fecha seleccionado,
+el más usado en la Internet, es una fecha con formato de cuatro dígitos del año/
+mes de dos dígitos/día de dos dígitos. Y así no es como lo usamos en los EEUU. En los EEUU usamos 9/24/2002. Pero en la web, básicamente
+dijeron, vamos a seleccionar. No queríamos seleccionar
+el más popular pero elegir algo que les
+gustaría a los computadoras. Así que resulta que, al fijarlo,
+de esta manera, esto se ordena. Así que si tuvieras que ordenar esto,
+el año es el más significativo. El mes es el segundo más significativo. Y el día es el siguiente más significativo. Y se rellena con ceros hasta dos dígitos
+para el mes y dos dígitos para el día. Así que el 1 de enero de 2001
+es 2001-01-01, etc. que tiene la misma longitud que 2002-12-31. Así que puedes ordenar esto
+y se ordena como cadena. Se ordenan de forma bastante natural,
+mientras que muchos formatos de fechas de uso común o que usamos al escribir, o en
+cheques, o lo que sea, no se ordenan tan bien. Hicimos esto para los informáticos,
+denme un segundo para cargar una imagen. Y la otra cosa es
+que si es una fecha-hora, es exactamente el mismo formato
+de fecha y luego tienes la letra T, y luego horas, minutos y segundos,
+y luego una zona horaria. Las fechas y horas en la web y
+en la Internet son muy problemáticas. Porque en el mundo real donde
+el sol sale y el sol se pone, y la hora del día es importante, ya sabes,
+quieres que sea mediodía cuando hace sol. Tenemos zonas horarias. Y entonces tenemos
+horario de verano. Y entonces ciertos lugares
+violan las reglas y tienen una hora
+diferente a sus vecinos. Y algo que las computadoras suelen hacer,
+es ignorar la zona horaria. Recuerdo que en los viejos tiempos, los computadoras se descuadraban cuando
+se pasaba al horario de verano. Y ya no lo hacen, porque ven todas
+las horas dentro de la computadora como Hora Universal
+u Hora del Meridiano de Greenwich. Y eso significa que incluso podría ser un
+día diferente, pero luego lo compensan. Y si alguna vez has viajado
+y tu calendario cambia, eso es porque la hora de tus cosas
+es la misma dentro del calendario. Pero cuando tu hora local cambia,
+simplemente lo mueve hacia adelante o hacia atrás, 6 horas adelante
+o 3 horas atrás, o lo que sea. Es por eso que tendemos. Estos formatos de hora pueden incluir
+zonas horarias, pero no es muy recomendable. y por lo tanto vemos estas
+horas Z que indica Hora Universal, como dije, se rellenan con 0 de forma
+que todas las columnas sean iguales. 4-2-2 con los guiones y eso significa que
+todos tendrán la misma longitud y la letra T y luego 2 dígitos:2 dígitos:2 dígitos
+usando los dos puntos y luego al final la zona horaria. Y como dije, tendemos a hacer todo en tiempo absoluto. Aquí hay algunos XSD más. Echemos un vistazo a este. Algunos documentos tienen este pequeño xml
+que es realmente una indicación de que es un documento XML y luego tenemos
+el esquema que es el exterior. Hay una <address> como la etiqueta exterior y esa etiqueta llega hasta aquí
+porque estos son solo pares clave-valor. Tenemos un <recipient> que es una cadena. <recipient>, <house> que es una cadena,
+supongo, <street> que es una cadena. Y luego tenemos <postcode>, <county>. ¿Qué tenemos aquí? <town>, <county>,
+oh el condado, esa es opcional. minOccurs=0, así que notarás
+que no hay condado aquí, porque eso es minOccurs=0,
+no hay condado. Y luego, si echamos un vistazo al <postcode>,
+el código postal es una cadena, así que esa es una cadena. Y luego tenemos <country> y resulta
+que <country> es interesante, así que todo esto de aquí pertenece al país. Así que <country> es una cadena, pero
+vamos a restringirla con esta enumeración, dice que tiene que ser
+una de estas cinco cadenas. Así que no puede ser cualquier cosa,
+tiene que ser una de estas cinco cadenas. En este particular, podemos validar que este UK es de
+hecho una de esas cadenas válidas. Así que esto valida. Así que esta parte de aquí se valida
+en todos los lugares que podemos comprobar y validar que cada una de las etiquetas
+cumpla con los requerimientos de este esquema XML. Aquí hay otro esquema que
+tiene un par de cosas más. xs:string, tenemos un .string,
+ya hicimos ese. maxOccurs="unbounded" Eso dice tantos como quieras. minOccurs="0", sabemos
+cómo lidiar con eso. xs:positiveInteger, que solo significa
+que un -14 no está permitido. Y luego use="required",
+dice que esto tiene que estar ahí. Y también puedes hablar sobre atributos. Así que básicamente debes tener un
+atributo orderid en esta etiqueta en particular. ¿bueno? y entonces No estoy tratando de
+enseñarte a ser un genio del XSD, sólo la noción de que existe esta sintaxis
+que se utiliza para establecer un contrato para que puedas resolver desacuerdos
+entre aplicaciones que cooperan entre sí. Entonces, a continuación, salimos del
+esquema y regresamos al XML y veremos cómo analizar XML en Python.
